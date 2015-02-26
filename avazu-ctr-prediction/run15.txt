@@ -1,0 +1,49 @@
+avazu>caffeinate -i pypy fast_solution_plus.py train --train train.csv.gz -o model15.gz --alpha=0.05 --beta=1 --L1=20 --L2=60 --interactions --n_epochs=2 --device_counters --timefeature --bits=25
+device_counters => True
+timefeature => True
+nodayfeature => False
+onlydays => None
+verbose => 3
+sparse => False
+interactions => True
+holdout => 100
+n_epochs => 2
+bits => 25
+dropout => 0.8
+L2 => 60.0
+L1 => 20.0
+beta => 1.0
+alpha => 0.05
+inmodel => None
+outmodel => model15.gz
+predictions => /dev/stdout
+test => /dev/stdin
+train => train.csv.gz
+action => train
+Learning from train.csv.gz
+ 2015-02-08 14:00:54.642733	encountered: 10000/9999	current logloss: 0.472742
+ 2015-02-08 14:00:56.394542	encountered: 20000/19999	current logloss: 0.458284
+ 2015-02-08 14:00:59.907689	encountered: 40000/39999	current logloss: 0.444504
+ 2015-02-08 14:01:06.926787	encountered: 80000/79999	current logloss: 0.425651
+ 2015-02-08 14:01:21.093075	encountered: 160000/159999	current logloss: 0.430263
+ 2015-02-08 14:01:49.096951	encountered: 320000/319999	current logloss: 0.409696
+ 2015-02-08 14:02:45.205350	encountered: 640000/639999	current logloss: 0.399355
+ 2015-02-08 14:04:39.301867	encountered: 1280000/1279999	current logloss: 0.383178
+ 2015-02-08 14:08:28.875762	encountered: 2560000/2559999	current logloss: 0.395796
+ 2015-02-08 14:16:13.016451	encountered: 5120000/5119999	current logloss: 0.401398
+ 2015-02-08 14:31:35.114114	encountered: 10240000/10239999	current logloss: 0.387449
+ 2015-02-08 15:02:43.264247	encountered: 20480000/20479999	current logloss: 0.397181
+Epoch 0 finished, 40428967/40428966 samples per pass, holdout logloss: 0.387832, elapsed time: 2:14:58.409093
+ 2015-02-08 16:15:52.453490	encountered: 10000/9999	current logloss: 0.375222
+ 2015-02-08 16:15:54.256987	encountered: 20000/19999	current logloss: 0.372563
+ 2015-02-08 16:15:57.836237	encountered: 40000/39999	current logloss: 0.388267
+ 2015-02-08 16:16:05.025275	encountered: 80000/79999	current logloss: 0.394506
+ 2015-02-08 16:16:19.546279	encountered: 160000/159999	current logloss: 0.407127
+ 2015-02-08 16:16:48.171102	encountered: 320000/319999	current logloss: 0.391394
+ 2015-02-08 16:17:45.155507	encountered: 640000/639999	current logloss: 0.386897
+ 2015-02-08 16:19:41.650657	encountered: 1280000/1279999	current logloss: 0.372786
+ 2015-02-08 16:23:37.575857	encountered: 2560000/2559999	current logloss: 0.386653
+ 2015-02-08 16:31:34.215449	encountered: 5120000/5119999	current logloss: 0.393667
+ 2015-02-08 16:47:24.289657	encountered: 10240000/10239999	current logloss: 0.381044
+ 2015-02-08 17:24:00.320984	encountered: 20480000/20479999	current logloss: 0.392418
+Epoch 1 finished, 40428967/40428966 samples per pass, holdout logloss: 0.384205, elapsed time: 6:30:11.118777

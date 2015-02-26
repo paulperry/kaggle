@@ -1,0 +1,106 @@
+total 1176080
+-rwxrwxrwx@ 1 paulperry  staff        257 Aug 26  2014 Code & Docs - MultiBoost.webloc
+-rwxrwxrwx  1 paulperry  staff     719083 Oct 27 12:11 Higgs.ipynb
+-rwxrwxrwx@ 1 paulperry  staff       3223 Aug 26  2014 HiggsBosonCompetition_AMSMetric_rev1.py
+-rwxrwxrwx@ 1 paulperry  staff    3146530 Sep  8 21:19 Higgs_1_GAM_Blender_(4+11+12+15)_64_Informative_Features_test1.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    3146004 Sep  8 21:19 Higgs_1_GAM_Blender_(4+11+12+15)_64_Informative_Features_test2.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    3145020 Sep  8 19:36 Higgs_1_GAM_Blender_(4+11+15+15)_100_Informative_Features_test1.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    3145150 Sep  8 19:36 Higgs_1_GAM_Blender_(4+11+15+15)_100_Informative_Features_test2.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    4060276 Sep 11 07:57 Higgs_1_GLM_Blender_(11+15)_64_Informative_Features_test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    2018171 Sep  7 08:47 Higgs_1_GLM_Blender_(4+11+15)_100_Informative_Features_test1.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    2018482 Sep  7 08:50 Higgs_1_GLM_Blender_(4+11+15)_100_Informative_Features_test2.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    2019501 Sep  8 19:59 Higgs_1_GLM_Blender_(4+11+15)_64_Informative_Features_test1.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    2019243 Sep  8 19:59 Higgs_1_GLM_Blender_(4+11+15)_64_Informative_Features_test2.csv.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    6311845 Sep  9 15:30 Higgs_2_AVG_Blender_(4+11+15+15)_90_Informative_Features_test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    4064068 Sep  9 15:02 Higgs_2_GLM_Blender_(11+12+15)_90_Informative_Features_test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    4047578 Sep 10 11:04 Higgs_2_GLM_Blender_(11+15+15+15+15)_90_Informative_Features_test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    6265068 Sep  9 14:58 Higgs_2_Gradient_Boosted_Trees_Classifier_(15)_67_Informative_Features_test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    6265110 Sep 12 07:07 Higgs_3_Gradient_Boosted_Trees_Classifier_(15)_90_Informative_Features_test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    4029184 Sep 15 18:31 Higgs_4_GLM_Blender_(11+15+15+15)_100_Informative_Features_test-public.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    4020983 Sep 15 15:40 Higgs_4_GLM_Blender_(4+11+12+15)_100_Informative_Features_test-public.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    6265373 Sep 15 18:05 Higgs_4_Gradient_Boosted_Trees_Classifier_(15)_100_Informative_Features_test-public.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    6278739 Sep 15 19:21 Higgs_AB_AVG_Blender_(11+12+15)_90_Informative_Features_testing_no_id_NA_AB.csv.gz
+-rwxrwxrwx  1 paulperry  staff        752 Sep 15 16:38 LB.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff        271 Aug 26  2014 MultiBoost benchmark script | The Higgs Machine Learning Challen.webloc
+-rwxrwxrwx@ 1 paulperry  staff     508238 Aug 26  2014 MultiBoost-1.2.02.zip
+-rwxrwxrwx@ 1 paulperry  staff        311 Aug 27 20:45 Vowpal Wabbit eats big data from the Criteo competition for brea.webloc
+-rwxrwxrwx  1 paulperry  staff    3256074 Sep 15 19:34 blend_ab.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff        222 Aug 26  2014 config.txt
+-rwxrwxrwx@ 1 paulperry  staff        222 Aug 26  2014 config.txt.orig
+-rwxrwxrwx@ 1 paulperry  staff        137 Aug 26  2014 configScoresTest.txt
+-rwxrwxrwx@ 1 paulperry  staff        137 Aug 26  2014 configScoresTest.txt.orig
+-rwxrwxrwx@ 1 paulperry  staff        149 Aug 26  2014 configScoresValidation.txt
+-rwxrwxrwx@ 1 paulperry  staff        149 Aug 26  2014 configScoresValidation.txt.orig
+-rw-r--r--  1 paulperry  staff          0 Feb 25 15:22 files.txt
+lrwxrwxrwx  1 paulperry  staff         65 Sep  9 15:31 higgs2_AVG.csv -> Higgs_2_AVG_Blender_(4+11+15+15)_90_Informative_Features_test.csv
+lrwxrwxrwx  1 paulperry  staff         79 Sep  9 14:59 higgs2_GBM.csv -> Higgs_2_Gradient_Boosted_Trees_Classifier_(15)_67_Informative_Features_test.csv
+lrwxrwxrwx  1 paulperry  staff         63 Sep  9 15:04 higgs2_GLM.csv -> Higgs_2_GLM_Blender_(11+12+15)_90_Informative_Features_test.csv
+lrwxrwxrwx  1 paulperry  staff         69 Sep 10 11:06 higgs2_GLM1515.csv -> Higgs_2_GLM_Blender_(11+15+15+15+15)_90_Informative_Features_test.csv
+lrwxrwxrwx  1 paulperry  staff         60 Sep 11 07:58 higgs2_GLM2.csv -> Higgs_1_GLM_Blender_(11+15)_64_Informative_Features_test.csv
+lrwxrwxrwx  1 paulperry  staff         79 Sep 12 07:40 higgs3_GBTC15.csv -> Higgs_3_Gradient_Boosted_Trees_Classifier_(15)_90_Informative_Features_test.csv
+lrwxrwxrwx  1 paulperry  staff         87 Sep 15 18:06 higgs4_GBM15.csv -> Higgs_4_Gradient_Boosted_Trees_Classifier_(15)_100_Informative_Features_test-public.csv
+lrwxrwxrwx  1 paulperry  staff         74 Sep 15 18:44 higgs4_GLM151515.csv -> Higgs_4_GLM_Blender_(11+15+15+15)_100_Informative_Features_test-public.csv
+lrwxrwxrwx  1 paulperry  staff         73 Sep 15 15:47 higgs4_GLM4.csv -> Higgs_4_GLM_Blender_(4+11+12+15)_100_Informative_Features_test-public.csv
+lrwxrwxrwx  1 paulperry  staff         79 Sep 15 19:26 higgs_ab.csv -> Higgs_AB_AVG_Blender_(11+12+15)_90_Informative_Features_testing_no_id_NA_AB.csv
+-rwxrwxrwx  1 paulperry  staff    3261562 Sep 15 19:26 kaggle_higgs_ab.csv.gz
+-rwxrwxrwx  1 paulperry  staff    2502199 Sep  8 17:00 kaggle_pred_dr1.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3262361 Sep  9 15:57 kaggle_pred_dr10.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3065871 Sep  9 16:19 kaggle_pred_dr11.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3066654 Sep 10 11:09 kaggle_pred_dr12.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3261944 Sep 10 11:20 kaggle_pred_dr13.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3261473 Sep 10 11:24 kaggle_pred_dr14.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3261743 Sep 10 16:14 kaggle_pred_dr15.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3262168 Sep 10 16:15 kaggle_pred_dr16.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3066659 Sep 11 07:59 kaggle_pred_dr17.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3261853 Sep 12 07:42 kaggle_pred_dr18.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3065177 Sep 15 15:49 kaggle_pred_dr19.csv.gz
+-rwxrwxrwx  1 paulperry  staff    2501087 Sep  8 17:48 kaggle_pred_dr2.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3261888 Sep 15 18:23 kaggle_pred_dr20.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3261844 Sep 15 18:42 kaggle_pred_dr21.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3065577 Sep 15 18:45 kaggle_pred_dr22.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3254169 Sep 15 18:58 kaggle_pred_dr23.csv.gz
+-rwxrwxrwx  1 paulperry  staff    2503085 Sep  8 17:50 kaggle_pred_dr3.csv.gz
+-rwxrwxrwx  1 paulperry  staff    2503986 Sep  8 19:43 kaggle_pred_dr4.csv.gz
+-rwxrwxrwx  1 paulperry  staff    2504526 Sep  8 20:06 kaggle_pred_dr5.csv.gz
+-rwxrwxrwx  1 paulperry  staff    2504067 Sep  8 22:10 kaggle_pred_dr6.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3263993 Sep  9 15:00 kaggle_pred_dr7.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3263993 Sep  9 16:15 kaggle_pred_dr8.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3263895 Sep  9 15:32 kaggle_pred_dr9.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3257995 Sep 15 19:53 kaggle_pred_dr_final.csv.gz
+-rwxrwxrwx  1 paulperry  staff    1351180 Aug 26  2014 multiboost-1.2.02-macos
+-rwxrwxrwx@ 1 paulperry  staff    3818655 Aug 26  2014 multiboost-devdoc.zip
+-rwxrwxrwx  1 paulperry  staff      62990 Oct 27 12:11 multiboostBenchmark.ipynb
+lrwxrwxrwx  1 paulperry  staff         71 Sep  8 19:37 pred1_GAM.csv -> Higgs_1_GAM_Blender_(4+11+15+15)_100_Informative_Features_test1.csv.csv
+lrwxrwxrwx  1 paulperry  staff         70 Sep  8 22:06 pred1_GAM2.csv -> Higgs_1_GAM_Blender_(4+11+12+15)_64_Informative_Features_test1.csv.csv
+lrwxrwxrwx  1 paulperry  staff         68 Sep  8 15:58 pred1_GLM.csv -> Higgs_1_GLM_Blender_(4+11+15)_100_Informative_Features_test1.csv.csv
+lrwxrwxrwx  1 paulperry  staff         67 Sep  8 20:00 pred1_GLM64.csv -> Higgs_1_GLM_Blender_(4+11+15)_64_Informative_Features_test1.csv.csv
+lrwxrwxrwx  1 paulperry  staff         71 Sep  8 19:37 pred2_GAM.csv -> Higgs_1_GAM_Blender_(4+11+15+15)_100_Informative_Features_test2.csv.csv
+lrwxrwxrwx  1 paulperry  staff         70 Sep  8 22:07 pred2_GAM2.csv -> Higgs_1_GAM_Blender_(4+11+12+15)_64_Informative_Features_test2.csv.csv
+lrwxrwxrwx  1 paulperry  staff         68 Sep  8 15:58 pred2_GLM.csv -> Higgs_1_GLM_Blender_(4+11+15)_100_Informative_Features_test2.csv.csv
+lrwxrwxrwx  1 paulperry  staff         67 Sep  8 20:00 pred2_GLM64.csv -> Higgs_1_GLM_Blender_(4+11+15)_64_Informative_Features_test2.csv.csv
+-rwxrwxrwx  1 paulperry  staff     749948 Aug 26  2014 randomPermutation.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    3325164 May  5  2014 random_submission.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    2702527 Aug 26  2014 random_submission.zip
+-rwxrwxrwx  1 paulperry  staff      12893 Aug 26  2014 results.dta
+-rwxrwxrwx  1 paulperry  staff        130 Aug 26  2014 results.dta.header
+-rwxrwxrwx  1 paulperry  staff    9852046 Aug 26  2014 scoresTest.txt
+-rwxrwxrwx  1 paulperry  staff     447650 Aug 26  2014 scoresValidation.txt
+-rwxrwxrwx  1 paulperry  staff     885562 Aug 26  2014 shyp.xml
+-rwxrwxrwx  1 paulperry  staff    3268760 Aug 26  2014 submission.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3268776 Aug 26  2014 submission_multiboost_1000.csv.gz
+-rwxrwxrwx  1 paulperry  staff    3269361 Aug 26  2014 submission_multiboost_450.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    3130537 Aug 26  2014 submission_simplest.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    4811212 Sep 15 14:55 test-public-onlyAB.csv.gz
+-rwxrwxrwx  1 paulperry  staff   42831173 Sep 15 14:55 test-public.csv.gz
+-rwxrwxrwx  1 paulperry  staff  114479109 Aug 26  2014 test.arff
+-rwxrwxrwx@ 1 paulperry  staff   38859718 Sep  7 08:37 test.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff   36483908 Aug 26  2014 test.zip
+-rwxrwxrwx  1 paulperry  staff   19434143 Sep  7 08:38 test1.csv.gz
+-rwxrwxrwx  1 paulperry  staff   19426723 Sep  7 08:44 test2.csv.gz
+-rwxrwxrwx  1 paulperry  staff   19460324 Sep 11 14:49 train-shuf.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff    2188820 Sep 15 13:14 training-public-onlyAB.csv.gz
+-rwxrwxrwx  1 paulperry  staff   20777091 Sep 15 13:14 training-public.csv.gz
+-rwxrwxrwx  1 paulperry  staff   51722915 Aug 26  2014 training.arff
+-rwxrwxrwx@ 1 paulperry  staff   19014652 May  9  2014 training.csv.gz
+-rwxrwxrwx@ 1 paulperry  staff   17712751 Aug 26  2014 training.zip
+-rwxrwxrwx  1 paulperry  staff    5748337 Aug 26  2014 validation.arff

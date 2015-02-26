@@ -1,0 +1,3 @@
+avazu>caffeinate -i pypy fast_solution_p1.py
+Epoch 0 finished, validation logloss: 0.403576, elapsed time: 0:08:16.369440
+avazu>ls

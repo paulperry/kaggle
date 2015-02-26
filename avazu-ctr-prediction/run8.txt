@@ -1,0 +1,73 @@
+avazu>caffeinate -i pypy fast_solution_plus.py train --train train.csv.gz -o model8.gz --alpha=0.015 --beta=1.1 --L1=20 --L2=40 --n_epochs=2 --device_counters --timefeature --bits=24 --dropout=0.95  
+device_counters => True
+timefeature => True
+nodayfeature => False
+onlydays => None
+verbose => 3
+sparse => False
+interactions => False
+holdout => 100
+n_epochs => 2
+bits => 24
+dropout => 0.95
+L2 => 40.0
+L1 => 20.0
+beta => 1.1
+alpha => 0.015
+inmodel => None
+outmodel => model8.gz
+predictions => /dev/stdout
+test => /dev/stdin
+train => train.csv.gz
+action => train
+Learning from train.csv.gz
+ 2015-02-02 17:19:40.202509	encountered: 10000/9999	current logloss: 0.477238
+ 2015-02-02 17:19:40.421719	encountered: 20000/19999	current logloss: 0.456978
+ 2015-02-02 17:19:40.828299	encountered: 40000/39999	current logloss: 0.450881
+ 2015-02-02 17:19:41.631494	encountered: 80000/79999	current logloss: 0.429134
+ 2015-02-02 17:19:43.169844	encountered: 160000/159999	current logloss: 0.439908
+ 2015-02-02 17:19:46.091040	encountered: 320000/319999	current logloss: 0.419190
+ 2015-02-02 17:19:51.984828	encountered: 640000/639999	current logloss: 0.407279
+ 2015-02-02 17:20:03.597526	encountered: 1280000/1279999	current logloss: 0.391487
+ 2015-02-02 17:20:27.396346	encountered: 2560000/2559999	current logloss: 0.405199
+ 2015-02-02 17:21:16.736942	encountered: 5120000/5119999	current logloss: 0.412367
+ 2015-02-02 17:22:50.994262	encountered: 10240000/10239999	current logloss: 0.398316
+ 2015-02-02 17:26:00.627521	encountered: 20480000/20479999	current logloss: 0.407757
+Epoch 0 finished, 40428967/40428966 samples per pass, holdout logloss: 0.398165, elapsed time: 0:12:49.369827
+ 2015-02-02 17:32:28.918724	encountered: 10000/9999	current logloss: 0.378007
+ 2015-02-02 17:32:29.085362	encountered: 20000/19999	current logloss: 0.385828
+ 2015-02-02 17:32:29.420367	encountered: 40000/39999	current logloss: 0.402669
+ 2015-02-02 17:32:30.096226	encountered: 80000/79999	current logloss: 0.401134
+ 2015-02-02 17:32:31.481040	encountered: 160000/159999	current logloss: 0.416511
+ 2015-02-02 17:32:34.281375	encountered: 320000/319999	current logloss: 0.401581
+ 2015-02-02 17:32:39.902447	encountered: 640000/639999	current logloss: 0.394748
+ 2015-02-02 17:32:51.708228	encountered: 1280000/1279999	current logloss: 0.381966
+ 2015-02-02 17:33:15.303645	encountered: 2560000/2559999	current logloss: 0.396953
+ 2015-02-02 17:34:05.155444	encountered: 5120000/5119999	current logloss: 0.405611
+ 2015-02-02 17:35:40.427908	encountered: 10240000/10239999	current logloss: 0.392776
+ 2015-02-02 17:38:53.820908	encountered: 20480000/20479999	current logloss: 0.403678
+Epoch 1 finished, 40428967/40428966 samples per pass, holdout logloss: 0.395111, elapsed time: 0:25:34.035771
+avazu>pypy fast_solution_plus.py predict --test test.csv.gz -i model8.gz -p predict8.gz
+device_counters => False
+timefeature => False
+nodayfeature => False
+onlydays => None
+verbose => 3
+sparse => False
+interactions => False
+holdout => 100
+n_epochs => 1
+bits => 23
+dropout => 0.8
+L2 => 0
+L1 => 0
+beta => 2
+alpha => 0.015
+inmodel => model8.gz
+outmodel => None
+predictions => predict8.gz
+test => test.csv.gz
+train => /dev/stdin
+action => predict
+Predicting to predict8.gz with model <__main__.ftrl_proximal object at 0x0000000105e32aa0> ...
+avazu>

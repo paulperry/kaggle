@@ -1,0 +1,93 @@
+s_A = df_purchase_ix['A']
+s_A_0 = s_A.replace({1: 2})
+s_A_0.replace({0: 1},inplace=True)
+s_A_0.replace({2: 0},inplace=True)
+df_A_0 = pd.DataFrame(s_A_0, columns=['A_0'])
+s_A_1 = s_A.replace({2: 0})
+df_A_1 = pd.DataFrame(s_A_1, columns=['A_1'])
+s_A_2 = s_A.replace({1: 0})
+s_A_2.replace({2: 1},inplace=True)
+df_A_2 = pd.DataFrame(s_A_2, columns=['A_2'])
+
+s_B = df_purchase_ix['B']
+s_B_1 = s_B
+df_B_1 = pd.DataFrame(s_B_1, columns=['B_1'])
+
+s_C = df_purchase_ix['C']
+s_C_1 = s_C.replace({2: 0})
+s_C_1.replace({3: 0},inplace=True)
+s_C_1.replace({4: 0},inplace=True)
+df_C_1 = pd.DataFrame(s_C_1, columns=['C_1'])
+s_C_2 = s_C.replace({1: 0})
+s_C_2.replace({2: 1},inplace=True)
+s_C_2.replace({3: 0},inplace=True)
+s_C_2.replace({4: 0},inplace=True)
+df_C_2 = pd.DataFrame(s_C_2, columns=['C_2'])
+s_C_3 = s_C.replace({1: 0})
+s_C_3.replace({2: 0},inplace=True)
+s_C_3.replace({3: 1},inplace=True)
+s_C_3.replace({4: 0},inplace=True)
+df_C_3 = pd.DataFrame(s_C_3, columns=['C_3'])
+s_C_4 = s_C.replace({1: 0})
+s_C_4.replace({2: 0},inplace=True)
+s_C_4.replace({3: 0},inplace=True)
+s_C_4.replace({4: 1},inplace=True)
+df_C_4 = pd.DataFrame(s_C_4, columns=['C_4'])
+
+s_D = df_purchase_ix['D']
+s_D_1 = s_D.replace({2: 0})
+s_D_1.replace({3: 0},inplace=True)
+df_D_1 = pd.DataFrame(s_D_1, columns=['D_1'])
+s_D_2 = s_D.replace({1: 0})
+s_D_2.replace({2: 1},inplace=True)
+s_D_2.replace({3: 0},inplace=True)
+df_D_2 = pd.DataFrame(s_D_2, columns=['D_2'])
+s_D_3 = s_D.replace({1: 0})
+s_D_3.replace({2: 0},inplace=True)
+s_D_3.replace({3: 1},inplace=True)
+df_D_3 = pd.DataFrame(s_D_3, columns=['D_3'])
+
+s_E = df_purchase_ix['E']
+s_E_1 = s_E
+df_E_1 = pd.DataFrame(s_E_1, columns=['E_1'])
+
+s_F = df_purchase_ix['F']
+s_F_0 = s_F.replace({1: 2})
+s_F_0.replace({0: 1},inplace=True)
+s_F_0.replace({2: 0},inplace=True)
+s_F_0.replace({3: 0},inplace=True)
+df_F_0 = pd.DataFrame(s_F_0, columns=['F_0'])
+s_F_1 = s_F.replace({2: 0})
+s_F_1.replace({3: 0},inplace=True)
+df_F_1 = pd.DataFrame(s_F_1, columns=['F_1'])
+s_F_2 = s_F.replace({1: 0})
+s_F_2.replace({2: 1},inplace=True)
+s_F_2.replace({3: 0},inplace=True)
+df_F_2 = pd.DataFrame(s_F_2, columns=['F_1'])
+s_F_3 = s_F.replace({1: 0})
+s_F_3.replace({2: 0},inplace=True)
+s_F_3.replace({3: 1},inplace=True)
+df_F_3 = pd.DataFrame(s_F_3, columns=['F_3'])
+
+s_G = df_purchase_ix['G']
+s_G_1 = s_G.replace({2: 0})
+s_G_1.replace({3: 0},inplace=True)
+s_G_1.replace({4: 0},inplace=True)
+df_G_1 = pd.DataFrame(s_G_1, columns=['G_1'])
+s_G_2 = s_G.replace({1: 0})
+s_G_2.replace({2: 1},inplace=True)
+s_G_2.replace({3: 0},inplace=True)
+s_G_2.replace({4: 0},inplace=True)
+df_G_2 = pd.DataFrame(s_G_2, columns=['G_2'])
+s_G_3 = s_G.replace({1: 0})
+s_G_3.replace({2: 0},inplace=True)
+s_G_3.replace({3: 1},inplace=True)
+s_G_3.replace({4: 0},inplace=True)
+df_G_3 = pd.DataFrame(s_G_3, columns=['G_3'])
+s_G_4 = s_G.replace({1: 0})
+s_G_4.replace({2: 0},inplace=True)
+s_G_4.replace({3: 0},inplace=True)
+s_G_4.replace({4: 1},inplace=True)
+df_G_4 = pd.DataFrame(s_G_4, columns=['G_4'])
+
+

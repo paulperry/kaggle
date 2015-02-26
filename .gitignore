@@ -1,0 +1,17 @@
+*.swp
+*.swo
+*.pickle
+*.pyc
+*.log
+*.err
+*_local.py
+*_local.json
+*.pid
+*~
+*.~
+TAGS
+.DS_Store
+.RData
+.Rhistory
+.Rapp.history
+.ipynb_checkpoints

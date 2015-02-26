@@ -1,0 +1,10 @@
+fileformat arff
+verbose 2
+learnertype TreeLearner
+constant
+seed 73
+weightpolicy balanced
+baselearnertype SingleStumpLearner 2
+outputinfo results.dta e01w01auc
+traintest training.arff validation.arff 3000
+shypname shyp.xml

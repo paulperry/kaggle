@@ -1,0 +1,5 @@
+posteriors validation.arff shyp.xml scoresValidation.txt 3000
+fileformat arff
+verbose 2
+learnertype TreeLearner
+baselearnertype SingleStumpLearner 2

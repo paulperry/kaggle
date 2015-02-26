@@ -1,0 +1,400 @@
+{
+ "metadata": {
+  "name": "Allstate Kaggle Competition"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "heading",
+     "level": 1,
+     "metadata": {},
+     "source": "Allstate Kaggle Competition"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "# Files #\n\nThe training and test sets contain transaction history for customers that ended up purchasing a policy. For each customer_ID, you are given their quote history. In the training set you have the entire quote history, the last row of which contains the coverage options they purchased. In the test set, you have only a partial history of the quotes and do not have the purchased coverage options. These are truncated to certain lengths to simulate making predictions with less history (higher uncertainty) or more history (lower uncertainty).\n\nFor each customer_ID in the test set, you must predict the seven coverage options they end up purchasing.\n\n# What is a customer? #\n\nEach customer has many shopping points, where a shopping point is defined by a customer with certain characteristics viewing a product and its associated cost at a particular time.\n\n- Some customer characteristics may change over time (e.g. as the customer changes or provides new information), and the cost depends on both the product and the customer characteristics.\n- A customer may represent a collection of people, as policies can cover more than one person.\n- A customer may purchase a product that was not viewed!\n\n# Product Options #\n\nEach product has 7 customizable options selected by customers, each with 2, 3, or 4 ordinal values possible:\n\nOption Name | Possible Values\n:---:|:---:\nA | 0,1,2\nB | 0,1\nC | 1,2,3,4\nD | 1,2,3\nE | 0,1\nF | 0,1,2,\nG | 1,2,3,4\n\n\nA product is simply a vector with length 7 whose values are chosen from each of the options listed above. The cost of a product is a function of both the product options and customer characteristics.\n\n# Variable Descriptions #\n\n- __customer_ID__ - A unique identifier for the customer\n- __shopping_pt__ - Unique identifier for the shopping point of a given customer\n- record_type - 0=shopping point, 1=purchase point\n- day - Day of the week (0-6, 0=Monday)\n- time - Time of day (HH:MM)\n- state - State where shopping point occurred\n- location - Location ID where shopping point occurred\n- group_size - How many people will be covered under the policy (1, 2, 3 or 4)\n- homeowner - Whether the customer owns a home or not (0=no, 1=yes)\n- car_age - Age of the customer\u2019s car\n- car_value - How valuable was the customer\u2019s car when new\n- risk_factor - An ordinal assessment of how risky the customer is (1, 2, 3, 4)\n- age_oldest - Age of the oldest person in customer's group\n- age_youngest - Age of the youngest person in customer\u2019s group\n- married_couple - Does the customer group contain a married couple (0=no, 1=yes)\n- C_previous - What the customer formerly had or currently has for product option C (0=nothing, 1, 2, 3,4)\n- duration_previous -  how long (in years) the customer was covered by their previous issuer\n- A,B,C,D,E,F,G - the coverage options\n- cost - cost of the quoted coverage options"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\n%pylab inline",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "Populating the interactive namespace from numpy and matplotlib\n"
+      }
+     ],
+     "prompt_number": 2
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Load the training data:"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df = pd.read_csv('/Users/Paul/Desktop/Allstate/' + 'train.csv')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 3
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df.count()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 4,
+       "text": "customer_ID          665249\nshopping_pt          665249\nrecord_type          665249\nday                  665249\ntime                 665249\nstate                665249\nlocation             665249\ngroup_size           665249\nhomeowner            665249\ncar_age              665249\ncar_value            663718\nrisk_factor          424831\nage_oldest           665249\nage_youngest         665249\nmarried_couple       665249\nC_previous           646538\nduration_previous    646538\nA                    665249\nB                    665249\nC                    665249\nD                    665249\nE                    665249\nF                    665249\nG                    665249\ncost                 665249\ndtype: int64"
+      }
+     ],
+     "prompt_number": 4
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df.describe()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "html": "<div style=\"max-height:1000px;max-width:1500px;overflow:auto;\">\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>customer_ID</th>\n      <th>shopping_pt</th>\n      <th>record_type</th>\n      <th>day</th>\n      <th>location</th>\n      <th>group_size</th>\n      <th>homeowner</th>\n      <th>car_age</th>\n      <th>risk_factor</th>\n      <th>age_oldest</th>\n      <th>age_youngest</th>\n      <th>married_couple</th>\n      <th>C_previous</th>\n      <th>duration_previous</th>\n      <th>A</th>\n      <th>B</th>\n      <th>C</th>\n      <th>D</th>\n      <th>E</th>\n      <th>F</th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>count</th>\n      <td>   665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 424831.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 646538.000000</td>\n      <td> 646538.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td> 665249.000000</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>mean</th>\n      <td> 10076553.440219</td>\n      <td>      4.219966</td>\n      <td>      0.145824</td>\n      <td>      1.969429</td>\n      <td>  12271.543022</td>\n      <td>      1.234784</td>\n      <td>      0.536229</td>\n      <td>      8.139437</td>\n      <td>      2.563996</td>\n      <td>     44.992403</td>\n      <td>     42.577588</td>\n      <td>      0.209782</td>\n      <td>      2.444718</td>\n      <td>      6.003774</td>\n      <td>      0.927546</td>\n      <td>      0.454236</td>\n      <td>      2.275265</td>\n      <td>      2.454299</td>\n      <td>      0.445193</td>\n      <td>      1.162768</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>std</th>\n      <td>    44049.778757</td>\n      <td>      2.394369</td>\n      <td>      0.352930</td>\n      <td>      1.453470</td>\n      <td>   1564.789415</td>\n      <td>      0.461036</td>\n      <td>      0.498686</td>\n      <td>      5.764598</td>\n      <td>      1.111584</td>\n      <td>     17.403440</td>\n      <td>     17.460432</td>\n      <td>      0.407153</td>\n      <td>      1.034596</td>\n      <td>      4.680793</td>\n      <td>      0.595221</td>\n      <td>      0.497902</td>\n      <td>      0.990798</td>\n      <td>      0.753953</td>\n      <td>      0.496987</td>\n      <td>      0.943594</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>min</th>\n      <td> 10000000.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      0.000000</td>\n      <td>  10001.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>     18.000000</td>\n      <td>     16.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      0.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      0.000000</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>25%</th>\n      <td> 10038523.000000</td>\n      <td>      2.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>  10936.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      3.000000</td>\n      <td>      2.000000</td>\n      <td>     28.000000</td>\n      <td>     26.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>      2.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>      2.000000</td>\n      <td>      0.000000</td>\n      <td>      0.000000</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>50%</th>\n      <td> 10076403.000000</td>\n      <td>      4.000000</td>\n      <td>      0.000000</td>\n      <td>      2.000000</td>\n      <td>  12027.000000</td>\n      <td>      1.000000</td>\n      <td>      1.000000</td>\n      <td>      7.000000</td>\n      <td>      3.000000</td>\n      <td>     44.000000</td>\n      <td>     40.000000</td>\n      <td>      0.000000</td>\n      <td>      3.000000</td>\n      <td>      5.000000</td>\n      <td>      1.000000</td>\n      <td>      0.000000</td>\n      <td>      2.000000</td>\n      <td>      3.000000</td>\n      <td>      0.000000</td>\n      <td>      1.000000</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>75%</th>\n      <td> 10114696.000000</td>\n      <td>      6.000000</td>\n      <td>      0.000000</td>\n      <td>      3.000000</td>\n      <td>  13426.000000</td>\n      <td>      1.000000</td>\n      <td>      1.000000</td>\n      <td>     12.000000</td>\n      <td>      4.000000</td>\n      <td>     60.000000</td>\n      <td>     57.000000</td>\n      <td>      0.000000</td>\n      <td>      3.000000</td>\n      <td>      9.000000</td>\n      <td>      1.000000</td>\n      <td>      1.000000</td>\n      <td>      3.000000</td>\n      <td>      3.000000</td>\n      <td>      1.000000</td>\n      <td>      2.000000</td>\n      <td>...</td>\n    </tr>\n    <tr>\n      <th>max</th>\n      <td> 10152724.000000</td>\n      <td>     13.000000</td>\n      <td>      1.000000</td>\n      <td>      6.000000</td>\n      <td>  16580.000000</td>\n      <td>      4.000000</td>\n      <td>      1.000000</td>\n      <td>     85.000000</td>\n      <td>      4.000000</td>\n      <td>     75.000000</td>\n      <td>     75.000000</td>\n      <td>      1.000000</td>\n      <td>      4.000000</td>\n      <td>     15.000000</td>\n      <td>      2.000000</td>\n      <td>      1.000000</td>\n      <td>      4.000000</td>\n      <td>      3.000000</td>\n      <td>      1.000000</td>\n      <td>      3.000000</td>\n      <td>...</td>\n    </tr>\n  </tbody>\n</table>\n<p>8 rows \u00d7 22 columns</p>\n</div>",
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 5,
+       "text": "           customer_ID    shopping_pt    record_type            day  \\\ncount    665249.000000  665249.000000  665249.000000  665249.000000   \nmean   10076553.440219       4.219966       0.145824       1.969429   \nstd       44049.778757       2.394369       0.352930       1.453470   \nmin    10000000.000000       1.000000       0.000000       0.000000   \n25%    10038523.000000       2.000000       0.000000       1.000000   \n50%    10076403.000000       4.000000       0.000000       2.000000   \n75%    10114696.000000       6.000000       0.000000       3.000000   \nmax    10152724.000000      13.000000       1.000000       6.000000   \n\n            location     group_size      homeowner        car_age  \\\ncount  665249.000000  665249.000000  665249.000000  665249.000000   \nmean    12271.543022       1.234784       0.536229       8.139437   \nstd      1564.789415       0.461036       0.498686       5.764598   \nmin     10001.000000       1.000000       0.000000       0.000000   \n25%     10936.000000       1.000000       0.000000       3.000000   \n50%     12027.000000       1.000000       1.000000       7.000000   \n75%     13426.000000       1.000000       1.000000      12.000000   \nmax     16580.000000       4.000000       1.000000      85.000000   \n\n         risk_factor     age_oldest   age_youngest  married_couple  \\\ncount  424831.000000  665249.000000  665249.000000   665249.000000   \nmean        2.563996      44.992403      42.577588        0.209782   \nstd         1.111584      17.403440      17.460432        0.407153   \nmin         1.000000      18.000000      16.000000        0.000000   \n25%         2.000000      28.000000      26.000000        0.000000   \n50%         3.000000      44.000000      40.000000        0.000000   \n75%         4.000000      60.000000      57.000000        0.000000   \nmax         4.000000      75.000000      75.000000        1.000000   \n\n          C_previous  duration_previous              A              B  \\\ncount  646538.000000      646538.000000  665249.000000  665249.000000   \nmean        2.444718           6.003774       0.927546       0.454236   \nstd         1.034596           4.680793       0.595221       0.497902   \nmin         1.000000           0.000000       0.000000       0.000000   \n25%         1.000000           2.000000       1.000000       0.000000   \n50%         3.000000           5.000000       1.000000       0.000000   \n75%         3.000000           9.000000       1.000000       1.000000   \nmax         4.000000          15.000000       2.000000       1.000000   \n\n                   C              D              E              F      \ncount  665249.000000  665249.000000  665249.000000  665249.000000 ...  \nmean        2.275265       2.454299       0.445193       1.162768 ...  \nstd         0.990798       0.753953       0.496987       0.943594 ...  \nmin         1.000000       1.000000       0.000000       0.000000 ...  \n25%         1.000000       2.000000       0.000000       0.000000 ...  \n50%         2.000000       3.000000       0.000000       1.000000 ...  \n75%         3.000000       3.000000       1.000000       2.000000 ...  \nmax         4.000000       3.000000       1.000000       3.000000 ...  \n\n[8 rows x 22 columns]"
+      }
+     ],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "cust = df.groupby('customer_ID')['customer_ID']",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 6
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Count the number of transactions including purchase and draw a histogram"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": " vc = cust.count().value_counts().sort_index() # count series of transactions",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 7
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "vc ",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 8,
+       "text": "3      5568\n4      8001\n5     11269\n6     15623\n7     18590\n8     17248\n9     11985\n10     6071\n11     2129\n12      475\n13       50\ndtype: int64"
+      }
+     ],
+     "prompt_number": 8
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "vc.plot(kind='bar')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 9,
+       "text": "<matplotlib.axes.AxesSubplot at 0x1047c6b90>"
+      },
+      {
+       "metadata": {},
+       "output_type": "display_data",
+       "png": "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\nuU1NDej8F4cnp1KPr9u5Xu/p9Xusdq52w5+IiNj5k4fY+audS2pi509ERG60G/4qd3j+k2tGJnOH\nJFGr32O1c7Ub/kRExM6fPMTOX+1cUhM7f8Xws+BE5C3thr8KHZ6/fxZcpw5ct1wVHj/M7aTd8Cci\nInb+w5IZvTA7f7VzSU3s/ImIyI12w1/lDq+XZE0ymTskiZo9flTO1W74ExERO/9hiZ2/sZk65pKa\n2PkTEZEb7Ya/yh1eL8maZDJ3SBI1e/yonNvv8F+9ejXCw8ORnJzsWlZfX4/09HTExsZizpw5aGxs\ndF22ZcsW2O12xMfHo6SkxLX8xIkTSE5Oht1ux9q1a13LW1tbsXz5ctjtdsyYMQOXL1/21b4REVFv\npB9Hjx6VkydPSlJSkmvZunXrZNu2bSIisnXrVlm/fr2IiJw9e1ZSUlKkra1NqqqqJDo6Wjo6OkRE\nZNq0aVJeXi4iIvPnz5dDhw6JiMj27dslNzdXRESKiopk+fLlPW6HB5uqDQACiAGn3u9j4zLNyu37\n90m3XFJTX8e931f+M2fORGhoqNuygwcPIisrCwCQlZWF/fv3AwAOHDiAlStXIigoCDabDTExMSgv\nL0dtbS2amprgcDgAAJmZma7bPLqujIwMHDlyxLtnMyIi6tegOv+6ujqEh4cDAMLDw1FXVwcAqKmp\ngdVqdV3ParXC6XR2Wx4ZGQmn0wkAcDqdiIqKAgAEBgYiODgY9fX1g9sbD6jc4fWSrEkmc4ckUbPH\nj8q5gd6uoOsbIYdCdnY2bDYbACAkJARTpkzBrFmzADy8s/o738XT6/vqfEVFhU/X9/CB39959HN5\nz9fvntd1nYHme3a+v+Pl2foqBpDfmdH7/dt1G0/X5+n5h9mP5pm9v7o9flTd366fq6ur0S9PeqOq\nqiq3zj8uLk5qa2tFRKSmpkbi4uJERGTLli2yZcsW1/Xmzp0rx44dk9raWomPj3ct/93vfievvvqq\n6zoff/yxiIjcv39fnnrqqQF3V7oBO39lu3ezcklNfR33QdU+ixYtQkFBAQCgoKAAS5YscS0vKipC\nW1sbqqqqUFlZCYfDgYiICFgsFpSXl0NEsHv3bixevLjbuvbt24e0tLTBbBIREQ1Ef88cK1askHHj\nxklQUJBYrVbZtWuX3Lx5U9LS0sRut0t6ero0NDS4rr9582aJjo6WuLg4KS4udi0/fvy4JCUlSXR0\n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\nT7377rv485//jOeffx5/+ctfkJqaipCQEHz44YfYsWMHZs+ebUguKU4UNWnSJLl//760tLTI6NGj\npbGxUURE7ty5I8nJyYblLliwQBYuXCgLFixwnR5//HHXcqNMmTLF9fPUqVPliy++EBGR5uZmSUxM\nNCQzPj7e9XNqaqrbZZMnTzYkU6RzX9vb2+Vvf/ubvPLKK/LUU0/J3Llz5de//rXcvn3bsNykpCQR\nEbl//76MHTtW7t+/LyIiHR0drsuMkJiYKA8ePBARkZaWFvna174mIiKXL1+WlJQUQzIbGhpk/fr1\nEhcXJyEhIRIaGipxcXGyfv16aWhoMCSzP/PmzTNs3Y2NjbJ+/Xr51re+JXv27HG7LDc317DcK1eu\nSE5Ojut+zc7OlsTERPn2t78tdXV1huWKiPjF5/yN8NhjjyEwMND1CrGrIvjyl7+MESOM2+1r165h\nzJgx+OEPf4g33ngDr7/+OiwWi+tno7S3t6O+vh43b95Ee3u765XwE088gcBAY97XT0xMxK5duwB0\nfqTs008/BQBcuHABjz32mCGZXUaMGIE5c+Zg165dcDqdyM3NxaFDhzBhwgTDMjs6OtDa2oqmpibc\nvXsXt27dAgDcu3cPHR0dhuUGBATg/v37rqyWlhYAwDPPPONa7mvLli1DaGgoysrKUF9fj/r6epSW\nliIkJATLli0zJBMATp482ePpxIkTOHXqlGG5r7zyCgAgIyMDhYWFyMjIwL179wAAH3/8sWG52dnZ\nSElJQXBwMGbMmIG4uDj89a9/hcPhQG5urmG5ANR95e9wOKSlpUVERNrb213LGxoaur1K9aUHDx7I\n22+/LWlpaXLy5EkREbHZbIbldXn22WfFZrOJzWaTCRMmSE1NjYiI3L5929BXh5mZmTJhwgRxOBwS\nGBgoNptNZs6cKRUVFYZkirj/K+d/NTc3G5b71ltvyYQJEyQ2Nlbef/99mTRpkuTk5EhiYqJs27bN\nsNyf//znkpSUJDk5ORIbGyv5+fkiIlJXVyczZ840JNNutw/qMm+NGDFCZs2a1eNp1KhRhuX+779U\nf/rTn8pzzz0nN27c6PP3zVuPPjajoqJ6vcwIyg7/u3fv9rj8xo0bcvr0acPzr169Ki+99JK89tpr\nYrVaDc/rTUtLi1y6dMnQjMbGRjl16pR8+umnUltba2iWiMjnn39ueEZvqqqq5ObNmyIi8p///EeK\niooMfaLrcubMGfnDH/4g58+fNzxLROSFF16Qbdu2yfXr113LamtrZevWrZKWlmZYbkJCgvz73//u\n8TIjH0fx8fFuLxJFRD744ANJSEiQZ555xrDcR5908vLy3C4zskoUUXj4+4s//elPsmHDBrM3g2hA\nbt68KevWrXN1/iEhIRIXFyfr1q1zPfkZYe/evb0+wX344YeG5b7xxhtSUlLSbfmhQ4ckJibGsNwf\n/ehHPb5PdeHCBcnIyDAsV0RE2U/7EJExPvjgA1dHPpR27dqF1atXM9dHOPyJaECioqLcvouLucMz\n1y++3oGI/EtycnKvl9XV1TF3mOcCHP5E1IMvvvgCxcXFCA0N7XbZc889x9xhngtw+BNRD1588UU0\nNzcjNTW122XPP/88c4d5LsDOn4hIS8r+H75ERNQ7Dn8iIg1x+BMRaYjDn4hIQxz+REQa+j+jwR1g\noAQjAgAAAABJRU5ErkJggg==\n",
+       "text": "<matplotlib.figure.Figure at 0x10f9fb2d0>"
+      }
+     ],
+     "prompt_number": 9
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Collect all the purchases in one dataframe."
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_purchase = df[df['record_type'] > 0]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 30
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Collect all shop transactions (without purchase) in a dataframe"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_shop = df[df['record_type'] == 0]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 31
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "options =('A','B','C','D','E','F','G')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 32
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "dfx = df[['customer_ID']+list(options)]\ndfx.ix[df['customer_ID'] == 10000005]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "html": "<div style=\"max-height:1000px;max-width:1500px;overflow:auto;\">\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>customer_ID</th>\n      <th>A</th>\n      <th>B</th>\n      <th>C</th>\n      <th>D</th>\n      <th>E</th>\n      <th>F</th>\n      <th>G</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>9 </th>\n      <td> 10000005</td>\n      <td> 1</td>\n      <td> 1</td>\n      <td> 3</td>\n      <td> 3</td>\n      <td> 1</td>\n      <td> 0</td>\n      <td> 2</td>\n    </tr>\n    <tr>\n      <th>10</th>\n      <td> 10000005</td>\n      <td> 1</td>\n      <td> 1</td>\n      <td> 3</td>\n      <td> 3</td>\n      <td> 1</td>\n      <td> 0</td>\n      <td> 2</td>\n    </tr>\n    <tr>\n      <th>11</th>\n      <td> 10000005</td>\n      <td> 1</td>\n      <td> 1</td>\n      <td> 3</td>\n      <td> 3</td>\n      <td> 1</td>\n      <td> 0</td>\n      <td> 2</td>\n    </tr>\n    <tr>\n      <th>12</th>\n      <td> 10000005</td>\n      <td> 0</td>\n      <td> 0</td>\n      <td> 3</td>\n      <td> 2</td>\n      <td> 0</td>\n      <td> 0</td>\n      <td> 2</td>\n    </tr>\n    <tr>\n      <th>13</th>\n      <td> 10000005</td>\n      <td> 0</td>\n      <td> 0</td>\n      <td> 3</td>\n      <td> 2</td>\n      <td> 0</td>\n      <td> 0</td>\n      <td> 2</td>\n    </tr>\n    <tr>\n      <th>14</th>\n      <td> 10000005</td>\n      <td> 0</td>\n      <td> 0</td>\n      <td> 3</td>\n      <td> 2</td>\n      <td> 0</td>\n      <td> 0</td>\n      <td> 2</td>\n    </tr>\n  </tbody>\n</table>\n<p>6 rows \u00d7 8 columns</p>\n</div>",
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 229,
+       "text": "    customer_ID  A  B  C  D  E  F  G\n9      10000005  1  1  3  3  1  0  2\n10     10000005  1  1  3  3  1  0  2\n11     10000005  1  1  3  3  1  0  2\n12     10000005  0  0  3  2  0  0  2\n13     10000005  0  0  3  2  0  0  2\n14     10000005  0  0  3  2  0  0  2\n\n[6 rows x 8 columns]"
+      }
+     ],
+     "prompt_number": 229
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "s_customers = pd.Series(df.customer_ID.unique())",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 277
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "For every customer, for every option, count how many times the option has changed"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_shop_groupby = df_shop.groupby('customer_ID')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 33
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "# this is so slow it's painful\n\ndf_op_change = pd.DataFrame(index=s_customers,columns=list(options))\nbase = 0        # base index in gp, incremented per groupby group\nfor k, gp in df_shop_groupby:\n    for o in options:\n        counter = 0 # counter of changes to option\n        for i in range(base,base+(len(gp)-1)):\n            if gp[o][i] != gp[o][i+1]:\n                counter += 1\n        df_op_change.ix[k,o] = counter\n    base += len(gp)+1",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 287
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Check the count is correct by inspecting an element"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_op_change.ix[10000005]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 289,
+       "text": "A    1\nB    1\nC    0\nD    1\nE    1\nF    0\nG    0\nName: 10000005, dtype: object"
+      }
+     ],
+     "prompt_number": 289
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "# save the result cause it took forever to compute !\ndf_op_change.to_csv('/Users/Paul/Desktop/Allstate/' + 'options_changes.csv')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 293
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_sum = df_op_change.sum()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 296
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "What is the average number of changes per option ?"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_sum / df_op_change.count()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 301,
+       "text": "A    0.423043\nB    0.281551\nC    0.454174\nD    0.318785\nE    0.309466\nF    0.430249\nG    0.575400\ndtype: float64"
+      }
+     ],
+     "prompt_number": 301
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Check the test dataset"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_test = pd.read_csv('/Users/Paul/Desktop/Allstate/' + 'test_v2.csv')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 319
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "test_trans_count = df.groupby('customer_ID')['customer_ID'].count().value_counts().sort_index()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 322
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "test_trans_count",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 323,
+       "text": "3      5568\n4      8001\n5     11269\n6     15623\n7     18590\n8     17248\n9     11985\n10     6071\n11     2129\n12      475\n13       50\ndtype: int64"
+      }
+     ],
+     "prompt_number": 323
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "test_trans_count.plot(kind='bar')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 324,
+       "text": "<matplotlib.axes.AxesSubplot at 0x109445550>"
+      },
+      {
+       "metadata": {},
+       "output_type": "display_data",
+       "png": "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\nuU1NDej8F4cnp1KPr9u5Xu/p9Xusdq52w5+IiNj5k4fY+audS2pi509ERG60G/4qd3j+k2tGJnOH\nJFGr32O1c7Ub/kRExM6fPMTOX+1cUhM7f8Xws+BE5C3thr8KHZ6/fxZcpw5ct1wVHj/M7aTd8Cci\nInb+w5IZvTA7f7VzSU3s/ImIyI12w1/lDq+XZE0ymTskiZo9flTO1W74ExERO/9hiZ2/sZk65pKa\n2PkTEZEb7Ya/yh1eL8maZDJ3SBI1e/yonNvv8F+9ejXCw8ORnJzsWlZfX4/09HTExsZizpw5aGxs\ndF22ZcsW2O12xMfHo6SkxLX8xIkTSE5Oht1ux9q1a13LW1tbsXz5ctjtdsyYMQOXL1/21b4REVFv\npB9Hjx6VkydPSlJSkmvZunXrZNu2bSIisnXrVlm/fr2IiJw9e1ZSUlKkra1NqqqqJDo6Wjo6OkRE\nZNq0aVJeXi4iIvPnz5dDhw6JiMj27dslNzdXRESKiopk+fLlPW6HB5uqDQACiAGn3u9j4zLNyu37\n90m3XFJTX8e931f+M2fORGhoqNuygwcPIisrCwCQlZWF/fv3AwAOHDiAlStXIigoCDabDTExMSgv\nL0dtbS2amprgcDgAAJmZma7bPLqujIwMHDlyxLtnMyIi6tegOv+6ujqEh4cDAMLDw1FXVwcAqKmp\ngdVqdV3ParXC6XR2Wx4ZGQmn0wkAcDqdiIqKAgAEBgYiODgY9fX1g9sbD6jc4fWSrEkmc4ckUbPH\nj8q5gd6uoOsbIYdCdnY2bDYbACAkJARTpkzBrFmzADy8s/o738XT6/vqfEVFhU/X9/CB39959HN5\nz9fvntd1nYHme3a+v+Pl2foqBpDfmdH7/dt1G0/X5+n5h9mP5pm9v7o9flTd366fq6ur0S9PeqOq\nqiq3zj8uLk5qa2tFRKSmpkbi4uJERGTLli2yZcsW1/Xmzp0rx44dk9raWomPj3ct/93vfievvvqq\n6zoff/yxiIjcv39fnnrqqQF3V7oBO39lu3ezcklNfR33QdU+ixYtQkFBAQCgoKAAS5YscS0vKipC\nW1sbqqqqUFlZCYfDgYiICFgsFpSXl0NEsHv3bixevLjbuvbt24e0tLTBbBIREQ1Ef88cK1askHHj\nxklQUJBYrVbZtWuX3Lx5U9LS0sRut0t6ero0NDS4rr9582aJjo6WuLg4KS4udi0/fvy4JCUlSXR0\n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\nT7377rv485//jOeffx5/+ctfkJqaipCQEHz44YfYsWMHZs+ebUguKU4UNWnSJLl//760tLTI6NGj\npbGxUURE7ty5I8nJyYblLliwQBYuXCgLFixwnR5//HHXcqNMmTLF9fPUqVPliy++EBGR5uZmSUxM\nNCQzPj7e9XNqaqrbZZMnTzYkU6RzX9vb2+Vvf/ubvPLKK/LUU0/J3Llz5de//rXcvn3bsNykpCQR\nEbl//76MHTtW7t+/LyIiHR0drsuMkJiYKA8ePBARkZaWFvna174mIiKXL1+WlJQUQzIbGhpk/fr1\nEhcXJyEhIRIaGipxcXGyfv16aWhoMCSzP/PmzTNs3Y2NjbJ+/Xr51re+JXv27HG7LDc317DcK1eu\nSE5Ojut+zc7OlsTERPn2t78tdXV1huWKiPjF5/yN8NhjjyEwMND1CrGrIvjyl7+MESOM2+1r165h\nzJgx+OEPf4g33ngDr7/+OiwWi+tno7S3t6O+vh43b95Ee3u765XwE088gcBAY97XT0xMxK5duwB0\nfqTs008/BQBcuHABjz32mCGZXUaMGIE5c+Zg165dcDqdyM3NxaFDhzBhwgTDMjs6OtDa2oqmpibc\nvXsXt27dAgDcu3cPHR0dhuUGBATg/v37rqyWlhYAwDPPPONa7mvLli1DaGgoysrKUF9fj/r6epSW\nliIkJATLli0zJBMATp482ePpxIkTOHXqlGG5r7zyCgAgIyMDhYWFyMjIwL179wAAH3/8sWG52dnZ\nSElJQXBwMGbMmIG4uDj89a9/hcPhQG5urmG5ANR95e9wOKSlpUVERNrb213LGxoaur1K9aUHDx7I\n22+/LWlpaXLy5EkREbHZbIbldXn22WfFZrOJzWaTCRMmSE1NjYiI3L5929BXh5mZmTJhwgRxOBwS\nGBgoNptNZs6cKRUVFYZkirj/K+d/NTc3G5b71ltvyYQJEyQ2Nlbef/99mTRpkuTk5EhiYqJs27bN\nsNyf//znkpSUJDk5ORIbGyv5+fkiIlJXVyczZ840JNNutw/qMm+NGDFCZs2a1eNp1KhRhuX+779U\nf/rTn8pzzz0nN27c6PP3zVuPPjajoqJ6vcwIyg7/u3fv9rj8xo0bcvr0acPzr169Ki+99JK89tpr\nYrVaDc/rTUtLi1y6dMnQjMbGRjl16pR8+umnUltba2iWiMjnn39ueEZvqqqq5ObNmyIi8p///EeK\niooMfaLrcubMGfnDH/4g58+fNzxLROSFF16Qbdu2yfXr113LamtrZevWrZKWlmZYbkJCgvz73//u\n8TIjH0fx8fFuLxJFRD744ANJSEiQZ555xrDcR5908vLy3C4zskoUUXj4+4s//elPsmHDBrM3g2hA\nbt68KevWrXN1/iEhIRIXFyfr1q1zPfkZYe/evb0+wX344YeG5b7xxhtSUlLSbfmhQ4ckJibGsNwf\n/ehHPb5PdeHCBcnIyDAsV0RE2U/7EJExPvjgA1dHPpR27dqF1atXM9dHOPyJaECioqLcvouLucMz\n1y++3oGI/EtycnKvl9XV1TF3mOcCHP5E1IMvvvgCxcXFCA0N7XbZc889x9xhngtw+BNRD1588UU0\nNzcjNTW122XPP/88c4d5LsDOn4hIS8r+H75ERNQ7Dn8iIg1x+BMRaYjDn4hIQxz+REQa+j+jwR1g\noAQjAgAAAABJRU5ErkJggg==\n",
+       "text": "<matplotlib.figure.Figure at 0x10ffb3210>"
+      }
+     ],
+     "prompt_number": 324
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "The disitrbution seems similar to the train data.  Do we really need to truncate the train transaction data?"
+    },
+    {
+     "cell_type": "markdown",
+     "metadata": {},
+     "source": "Let's look at the probabilities of the kinds of transitions on a per option basis by counting them all"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "def opt_transitions(df_groupby, opt, states):\n    df_transitions = pd.DataFrame(index=states,columns=states)\n    for m in states:\n        for n in states:\n            df_transitions.ix[m,n] = 0\n    base = 0        # base index in gp, incremented per groupby group\n    for k, gp in df_groupby:\n        counter = 0 # counter of changes to option\n        for i in range(base,base+(len(gp)-1)):\n            if gp[opt][i] != gp[opt][i+1]:\n                df_transitions.ix[gp[opt][i],gp[opt][i+1]] += 1\n        base += len(gp)+1\n    return df_transitions\n    \n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 49
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_A = opt_transitions(df_shop_groupby,'A',[0,1,2])",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 50
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "df_A",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "html": "<div style=\"max-height:1000px;max-width:1500px;overflow:auto;\">\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>0</th>\n      <th>1</th>\n      <th>2</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>     0</td>\n      <td> 12449</td>\n      <td> 2712</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td> 11470</td>\n      <td>     0</td>\n      <td> 7775</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>  1878</td>\n      <td>  4755</td>\n      <td>    0</td>\n    </tr>\n  </tbody>\n</table>\n<p>3 rows \u00d7 3 columns</p>\n</div>",
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 51,
+       "text": "       0      1     2\n0      0  12449  2712\n1  11470      0  7775\n2   1878   4755     0\n\n[3 rows x 3 columns]"
+      }
+     ],
+     "prompt_number": 51
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
