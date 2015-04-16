@@ -12,8 +12,8 @@ leaderboard. Later you realize you need to establish a well defined
 and organized workflow so you can keep track of your progress,
 reproduce and share your results.  This repo is towards that goal.
 
-The place to start in each of the directories is an ipynb file, if
-there is one.
-
+The place to start is the README in each of the directories, which
+should provide some background on how the competition went and point
+to the right ipynb file.
 
 Paul.
