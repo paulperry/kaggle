@@ -32,9 +32,8 @@ score | Language | site
 0.794 | Python | [kaggle - forum]( https://www.kaggle.com/c/titanic-gettingStarted/forums/t/6708/python-code-to-score-0-79426/36826)
 0.794 | R | [kaggle - forum](http://www.kaggle.com/c/titanic-gettingStarted/forums/t/5232/r-code-to-score-0-79426)
 0.794 | R | [philippeadjiman](http://www.philippeadjiman.com/blog/2013/09/12/a-data-science-exploration-from-the-titanic-in-r/) 
- | Python | [](http://elenacuoco.altervista.org/blog/archives/1195)
- | | [agconti](https://github.com/agconti/kaggle-titanic)
- | | [mwaskom](http://nbviewer.ipython.org/gist/mwaskom/8224591)
+ | Python | [agconti](https://github.com/agconti/kaggle-titanic)
+ | Python | [mwaskom](http://nbviewer.ipython.org/gist/mwaskom/8224591)
  | | [Who Survived the Titanic? A Logistic Regression Analysis](http://works.bepress.com/lonniekstevans/5/)
 
 
