@@ -1,0 +1,200 @@
+competition_name,competition_url,competition_type,prize_amount,number_of_teams,deadline,start_date,end_date
+Heritage Health Prize,//www.heritagehealthprize.com/c/hhp,standard,500000.0,1353,2 years ago,2011-04-04 17:03:00,2013-04-04 07:00:00
+GE Flight Quest,//www.gequest.com/c/flight,standard,250000.0,173,2 years ago,2012-11-28 18:36:00,2013-03-11 23:59:00
+"Flight Quest 2: Flight Optimization, Milestone Phase",//www.gequest.com/c/flight2-milestone,standard,250000.0,129,2 years ago,2013-08-06 03:44:00,2013-09-25 23:59:00
+"Flight Quest 2: Flight Optimization, Main Phase",//www.gequest.com/c/flight2-main,standard,220000.0,121,2 years ago,2013-09-26 16:46:00,2014-01-18 23:59:00
+"Flight Quest 2: Flight Optimization, Final Phase",//www.gequest.com/c/flight2-final,standard,220000.0,33,24 months ago,2014-01-19 00:00:00,2014-02-23 23:59:00
+National Data Science Bowl,/c/datasciencebowl,standard,175000.0,1049,11 months ago,2014-12-15 14:00:00,2015-03-16 23:59:00
+Diabetic Retinopathy Detection,/c/diabetic-retinopathy-detection,standard,100000.0,661,6 months ago,2015-02-17 18:18:00,2015-07-27 23:59:00
+Springleaf Marketing Response,/c/springleaf-marketing-response,standard,100000.0,2226,4 months ago,2015-08-14 14:23:00,2015-10-19 23:59:00
+GE Hospital Quest,//www.gequest.com/c/hospital,standard,100000.0,0,2 years ago,,
+The Hewlett Foundation: Short Answer Scoring,/c/asap-sas,standard,100000.0,152,3 years ago,2012-06-25 17:09:00,2012-09-05 23:59:00
+The Hewlett Foundation: Automated Essay Scoring,/c/asap-aes,standard,100000.0,154,3 years ago,2012-02-10 00:00:00,2012-04-30 23:59:00
+The Allen AI Science Challenge,/c/the-allen-ai-science-challenge,standard,80000.0,170,3 days ago,2015-10-07 16:13:00,2016-02-13 23:59:00
+Coupon Purchase Prediction,/c/coupon-purchase-prediction,standard,50000.0,1076,4 months ago,2015-07-16 00:45:00,2015-09-30 23:59:00
+The Winton Stock Market Challenge,/c/the-winton-stock-market-challenge,standard,50000.0,832,21 days ago,2015-10-27 18:55:00,2016-01-26 23:59:00
+Allstate Purchase Prediction Challenge,/c/allstate-purchase-prediction-challenge,standard,50000.0,1568,21 months ago,2014-02-18 15:04:00,2014-05-19 23:59:00
+Merck Molecular Activity Challenge,/c/MerckActivity,standard,40000.0,236,3 years ago,2012-08-16 21:34:00,2012-10-16 23:59:00
+West Nile Virus Prediction,/c/predict-west-nile-virus,standard,40000.0,1306,8 months ago,2015-04-22 21:31:00,2015-06-17 23:59:00
+Rossmann Store Sales,/c/rossmann-store-sales,standard,35000.0,3303,2 months ago,2015-09-30 12:02:00,2015-12-14 23:59:00
+Prudential Life Insurance Assessment,/c/prudential-life-insurance-assessment,standard,30000.0,2613,yesterday,2015-11-23 15:00:00,2016-02-15 23:59:00
+Caterpillar Tube Pricing,/c/caterpillar-tube-pricing,standard,30000.0,1323,5 months ago,2015-06-29 16:32:00,2015-08-31 23:59:00
+Restaurant Revenue Prediction,/c/restaurant-revenue-prediction,standard,30000.0,2257,9 months ago,2015-03-23 18:44:00,2015-05-04 23:59:00
+Driver Telematics Analysis,/c/axa-driver-telematics-analysis,standard,30000.0,1528,11 months ago,2014-12-15 14:00:00,2015-03-16 23:59:00
+Acquire Valued Shoppers Challenge,/c/acquire-valued-shoppers-challenge,standard,30000.0,952,19 months ago,2014-04-10 19:49:00,2014-07-14 23:59:00
+Liberty Mutual Group - Fire Peril Loss Cost,/c/liberty-mutual-fire-peril,standard,25000.0,634,17 months ago,2014-07-08 12:00:00,2014-09-02 23:59:00
+American Epilepsy Society Seizure Prediction Challenge,/c/seizure-prediction,standard,25000.0,504,15 months ago,2014-08-25 16:15:00,2014-11-17 23:59:00
+Personalize Expedia Hotel Searches - ICDM 2013,/c/expedia-personalized-sort,standard,25000.0,337,2 years ago,2013-09-03 17:03:00,2013-11-04 23:59:00
+U.S. Census Return Rate Challenge,/c/us-census-challenge,standard,25000.0,243,3 years ago,2012-08-31 05:26:00,2012-11-11 00:00:00
+Belkin Energy Disaggregation Competition,/c/belkin-energy-disaggregation-competition,standard,25000.0,165,2 years ago,2013-07-02 02:02:00,2013-10-30 23:59:00
+GigaOM WordPress Challenge: Splunk Innovation Prospect,/c/predict-wordpress-likes,standard,25000.0,75,3 years ago,2012-06-20 16:13:00,2012-09-07 23:59:00
+The Hunt for Prohibited Content,/c/avito-prohibited-content,standard,25000.0,285,17 months ago,2014-06-24 17:13:00,2014-08-31 23:59:00
+Liberty Mutual Group: Property Inspection Prediction,/c/liberty-mutual-group-property-inspection-prediction,standard,25000.0,2236,5 months ago,2015-07-06 15:57:00,2015-08-28 23:59:00
+Online Product Sales,/c/online-sales,standard,22500.0,363,3 years ago,2012-05-04 21:28:00,2012-07-03 23:59:00
+Observing Dark Worlds,/c/DarkWorlds,standard,20000.0,353,3 years ago,2012-10-12 16:00:00,2012-12-16 23:59:00
+Predict Closed Questions on Stack Overflow,/c/predict-closed-questions-on-stack-overflow,standard,20000.0,161,3 years ago,2012-08-21 16:10:00,2012-11-03 23:59:00
+Job Recommendation Challenge,/c/job-recommendation,standard,20000.0,81,3 years ago,2012-08-03 20:13:00,2012-10-07 00:00:00
+Predicting a Biological Response,/c/bioresponse,standard,20000.0,699,3 years ago,2012-03-16 19:10:00,2012-06-15 23:59:00
+Crowdflower Search Results Relevance,/c/crowdflower-search-relevance,standard,20000.0,1326,7 months ago,2015-05-11 20:56:00,2015-07-06 23:59:00
+Avito Context Ad Clicks,/c/avito-context-ad-clicks,standard,20000.0,414,6 months ago,2015-06-02 17:25:00,2015-07-28 23:59:00
+Helping Santa's Helpers,/c/helping-santas-helpers,standard,20000.0,439,13 months ago,2014-11-24 20:08:00,2015-01-07 23:59:00
+Homesite Quote Conversion,/c/homesite-quote-conversion,standard,20000.0,1762,8 days ago,2015-11-09 19:29:00,2016-02-08 23:59:00
+The Big Data Combine Engineered by BattleFin,/c/battlefin-s-big-data-combine-forecasting-challenge,standard,18500.0,425,2 years ago,2013-08-16 17:25:00,2013-10-01 23:59:00
+Benchmark Bond Trade Price Challenge,/c/benchmark-bond-trade-price-challenge,standard,17500.0,264,3 years ago,2012-01-27 01:40:00,2012-04-30 23:59:00
+Galaxy Zoo - The Galaxy Challenge,/c/galaxy-zoo-the-galaxy-challenge,standard,16000.0,326,22 months ago,2013-12-20 23:25:00,2014-04-04 23:59:00
+Display Advertising Challenge,/c/criteo-display-ad-challenge,standard,16000.0,718,17 months ago,2014-06-24 18:14:00,2014-09-23 23:59:00
+Microsoft Malware Classification Challenge (BIG 2015),/c/malware-classification,standard,16000.0,377,10 months ago,2015-02-03 18:49:00,2015-04-17 23:59:00
+Click-Through Rate Prediction,/c/avazu-ctr-prediction,standard,15000.0,1604,12 months ago,2014-11-18 18:04:00,2015-02-09 23:59:00
+Flavours of Physics: Finding τ  →  μμμ,/c/flavours-of-physics,standard,15000.0,673,4 months ago,2015-07-20 22:50:00,2015-10-12 23:59:00
+March Machine Learning Mania 2015,/c/march-machine-learning-mania-2015,standard,15000.0,341,10 months ago,2015-02-02 16:56:00,2015-04-07 23:59:00
+March Machine Learning Mania,/c/march-machine-learning-mania,standard,15000.0,248,22 months ago,2014-01-07 14:46:00,2014-04-08 23:59:00
+Higgs Boson Machine Learning Challenge,/c/higgs-boson,standard,13000.0,1785,17 months ago,2014-05-12 20:23:00,2014-09-15 23:59:00
+Practice Fusion Analyze This! 2012 - Prediction Challenge,/c/pf2012,standard,10500.0,0,3 years ago,,
+Practice Fusion Analyze This! 2012 - Open Challenge,/c/pf2012-at,standard,10000.0,0,3 years ago,,
+EMC Israel Data Science Challenge,/c/emc-data-science,standard,10000.0,86,3 years ago,2012-06-18 20:23:00,2012-09-01 23:59:00
+Practice Fusion Diabetes Classification,/c/pf2012-diabetes,standard,10000.0,146,3 years ago,2012-07-10 01:18:00,2012-09-10 23:59:00
+Detecting Insults in Social Commentary,/c/detecting-insults-in-social-commentary,standard,10000.0,50,3 years ago,2012-09-18 17:42:00,2012-09-21 23:59:00
+EMI Music Data Science Hackathon - July 21st - 24 hours,/c/MusicHackathon,standard,10000.0,133,3 years ago,2012-07-21 13:00:00,2012-07-22 12:00:00
+CPROD1: Consumer PRODucts contest #1,/c/cprod1,standard,10000.0,29,3 years ago,2012-07-02 22:38:00,2012-09-24 23:59:00
+Raising Money to Fund an Organizational Mission,/c/Raising-Money-to-Fund-an-Organizational-Mission,standard,10000.0,27,3 years ago,2012-07-18 21:39:00,2012-09-18 23:59:00
+CHALEARN Gesture Challenge 2,/c/GestureChallenge2,standard,10000.0,30,3 years ago,2012-05-08 00:01:00,2012-09-11 23:59:00
+Wikipedia's Participation Challenge,/c/wikichallenge,standard,10000.0,90,4 years ago,2011-06-28 16:22:00,2011-09-20 23:59:00
+Allstate Claim Prediction Challenge,/c/ClaimPredictionChallenge,standard,10000.0,102,4 years ago,2011-07-13 03:45:00,2011-10-12 23:59:00
+dunnhumby's Shopper Challenge,/c/dunnhumbychallenge,standard,10000.0,277,4 years ago,2011-07-29 20:23:00,2011-09-30 23:59:00
+Don't Get Kicked!,/c/DontGetKicked,standard,10000.0,570,4 years ago,2011-09-30 18:26:00,2012-01-05 23:59:00
+Algorithmic Trading Challenge,/c/AlgorithmicTradingChallenge,standard,10000.0,111,4 years ago,2011-11-11 18:05:00,2012-01-08 23:59:00
+CHALEARN Gesture Challenge,/c/GestureChallenge,standard,10000.0,47,3 years ago,2011-12-07 20:00:00,2012-04-10 23:59:00
+RTA Freeway Travel Time Prediction,/c/RTA,standard,10000.0,356,5 years ago,2010-11-23 00:00:00,2011-02-13 22:00:00
+Deloitte/FIDE Chess Rating Challenge,/c/ChessRatings2,standard,10000.0,181,4 years ago,2011-02-07 00:00:00,2011-05-04 15:00:00
+Loan Default Prediction - Imperial College London,/c/loan-default-prediction,standard,10000.0,675,23 months ago,2014-01-17 19:20:00,2014-03-14 23:59:00
+Packing Santa's Sleigh,/c/packing-santas-sleigh,standard,10000.0,362,2 years ago,2013-12-02 22:01:00,2014-01-26 23:59:00
+Cause-effect pairs,/c/cause-effect-pairs,standard,10000.0,266,2 years ago,2013-03-29 07:25:00,2013-09-02 23:59:00
+Predicting Parkinson's Disease Progression with Smartphone Data,/c/predicting-parkinson-s-disease-progression-with-smartphone-data,standard,10000.0,0,2 years ago,,
+Blue Book for Bulldozers,/c/bluebook-for-bulldozers,standard,10000.0,475,2 years ago,2013-01-25 18:13:00,2013-04-17 23:59:00
+Getting Started,/c/getting-started,standard,10000.0,0,3 years ago,,
+The Marinexplore and Cornell University Whale Detection Challenge,/c/whale-detection-challenge,standard,10000.0,245,2 years ago,2013-02-08 00:00:00,2013-04-08 00:00:00
+Multi-modal Gesture Recognition,/c/multi-modal-gesture-recognition,standard,10000.0,53,2 years ago,2013-06-21 17:41:00,2013-08-25 23:59:00
+Grasp-and-Lift EEG Detection,/c/grasp-and-lift-eeg-detection,standard,10000.0,379,5 months ago,2015-06-29 16:24:00,2015-08-31 23:59:00
+ICDM 2015: Drawbridge Cross-Device Connections,/c/icdm-2015-drawbridge-cross-device-connections,standard,10000.0,340,5 months ago,2015-06-01 16:03:00,2015-08-24 23:59:00
+Otto Group Product Classification Challenge,/c/otto-group-product-classification-challenge,standard,10000.0,3514,9 months ago,2015-03-17 15:56:00,2015-05-18 23:59:00
+Right Whale Recognition,/c/noaa-right-whale-recognition,standard,10000.0,364,40 days ago,2015-08-27 22:57:00,2016-01-07 23:59:00
+Truly Native? ,/c/dato-native,standard,10000.0,274,4 months ago,2015-08-06 21:33:00,2015-10-14 23:59:00
+Personalized Web Search Challenge,/c/yandex-personalized-web-search-challenge,standard,9000.0,194,2 years ago,2013-10-11 15:43:00,2014-01-10 23:59:00
+PAKDD 2014 - ASUS Malfunctional Components Prediction,/c/pakdd-cup-2014,standard,8500.0,610,22 months ago,2014-01-26 04:00:00,2014-04-01 04:00:00
+UPenn and Mayo Clinic's Seizure Detection Challenge,/c/seizure-detection,standard,8000.0,200,18 months ago,2014-05-19 13:30:00,2014-08-19 23:59:00
+Africa Soil Property Prediction Challenge ,/c/afsis-soil-properties,standard,8000.0,1233,16 months ago,2014-08-27 20:44:00,2014-10-21 23:59:00
+"KDD Cup 2012, Track 1",//www.kddcup2012.org/c/kddcup2012-track1,standard,8000.0,657,3 years ago,2012-02-20 00:01:00,2012-06-01 23:59:00
+"KDD Cup 2012, Track 2",//www.kddcup2012.org/c/kddcup2012-track2,standard,8000.0,163,3 years ago,2012-02-20 00:01:00,2012-06-01 23:59:00
+Global Energy Forecasting Competition 2012 - Load Forecasting,/c/global-energy-forecasting-competition-2012-load-forecasting,standard,7500.0,104,3 years ago,2012-09-01 00:42:00,2012-10-31 00:00:00
+Global Energy Forecasting Competition 2012 - Wind Forecasting,/c/GEF2012-wind-forecasting,standard,7500.0,133,3 years ago,2012-09-06 01:24:00,2012-10-31 00:00:00
+KDD Cup 2013 - Author-Paper Identification Challenge (Track 1),/c/kdd-cup-2013-author-paper-identification-challenge,standard,7500.0,553,2 years ago,2013-04-18 03:47:00,2013-06-26 23:59:00
+KDD Cup 2013 - Author Disambiguation Challenge (Track 2),/c/kdd-cup-2013-author-disambiguation,standard,7500.0,237,2 years ago,2013-04-19 22:45:00,2013-06-12 23:59:00
+EMC Data Science Global Hackathon (Air Quality Prediction),/c/dsg-hackathon,standard,7030.0,110,3 years ago,2012-04-28 12:00:00,2012-04-29 12:00:00
+Job Salary Prediction,/c/job-salary-prediction,standard,6000.0,289,2 years ago,2013-02-13 07:40:00,2013-04-03 23:59:00
+dunnhumby & hack/reduce Product Launch Challenge,/c/hack-reduce-dunnhumby-hackathon,standard,5000.0,108,2 years ago,2013-05-11 13:00:00,2013-05-11 23:00:00
+StumbleUpon Evergreen Classification Challenge,/c/stumbleupon,standard,5000.0,625,2 years ago,2013-08-16 20:12:00,2013-10-31 23:59:00
+Accelerometer Biometric Competition,/c/accelerometer-biometric-competition,standard,5000.0,633,2 years ago,2013-07-23 16:32:00,2013-11-22 23:59:00
+Amazon.com - Employee Access Challenge,/c/amazon-employee-access-challenge,standard,5000.0,1687,2 years ago,2013-05-29 19:56:00,2013-07-31 23:59:00
+DecMeg2014 - Decoding the Human Brain,/c/decoding-the-human-brain,standard,5000.0,267,18 months ago,2014-04-21 05:21:00,2014-07-27 23:59:00
+Give Me Some Credit,/c/GiveMeSomeCredit,standard,5000.0,925,4 years ago,2011-09-19 12:45:00,2011-12-15 23:59:00
+Visualize the State of Public Education in Colorado,/c/visualize-the-state-of-education-in-colorado,standard,5000.0,0,3 years ago,,
+Event Recommendation Engine Challenge,/c/event-recommendation-engine-challenge,standard,5000.0,223,2 years ago,2013-01-11 00:57:00,2013-02-20 23:59:00
+What Do You Know?,/c/WhatDoYouKnow,standard,5000.0,239,3 years ago,2011-11-18 22:07:00,2012-02-29 23:59:00
+Photo Quality Prediction,/c/PhotoQualityPrediction,standard,5000.0,200,4 years ago,2011-10-29 18:57:00,2011-11-20 23:59:00
+Predict Grant Applications,/c/unimelb,standard,5000.0,204,4 years ago,2010-12-13 09:22:00,2011-02-20 22:00:00
+Tradeshift Text Classification,/c/tradeshift-text-classification,standard,5000.0,375,15 months ago,2014-10-02 14:36:00,2014-11-10 23:59:00
+See Click Predict Fix,/c/see-click-predict-fix,standard,4000.0,532,2 years ago,2013-09-29 01:09:00,2013-11-27 23:59:00
+CONNECTOMICS,/c/connectomics,standard,3000.0,143,21 months ago,2014-02-05 20:00:00,2014-05-05 23:59:00
+Traveling Santa Problem,/c/traveling-santa-problem,standard,3000.0,355,3 years ago,2012-12-14 01:51:00,2013-01-19 00:00:00
+Mapping Dark Matter,/c/mdm,standard,3000.0,70,4 years ago,2011-05-23 13:42:00,2011-08-18 00:00:00
+Harvard Business Review 'Vision Statement' Prospect,/c/harvard-business-review-vision-statement-prospect,standard,2500.0,0,3 years ago,,
+Influencers in Social Networks,/c/predict-who-is-more-influential-in-a-social-network,standard,2350.0,132,2 years ago,2013-04-13 12:00:00,2013-04-14 12:00:00
+KDD Cup 2014 - Predicting Excitement at DonorsChoose.org,/c/kdd-cup-2014-predicting-excitement-at-donors-choose,standard,2000.0,472,19 months ago,2014-05-15 13:29:00,2014-07-15 23:59:00
+MLSP 2013 Bird Classification Challenge,/c/mlsp-2013-birds,standard,1800.0,79,2 years ago,2013-06-17 23:50:00,2013-08-19 23:59:00
+ICDAR2013 - Gender Prediction from Handwriting,/c/icdar2013-gender-prediction-from-handwriting,standard,1000.0,190,2 years ago,2013-03-05 09:46:00,2013-04-15 00:00:00
+ICDAR2013 - Handwriting Stroke Recovery from Offline Data,/c/icdar2013-stroke-recovery-from-offline-data,standard,1000.0,40,2 years ago,2013-03-20 23:34:00,2013-04-20 23:59:00
+See Click Predict Fix - Hackathon,/c/the-seeclickfix-311-challenge,standard,1000.0,80,2 years ago,2013-09-28 03:00:00,2013-09-29 01:00:00
+AMS 2013-2014 Solar Energy Prediction Contest,/c/ams-2014-solar-energy-prediction-contest,standard,1000.0,160,2 years ago,2013-07-08 18:45:00,2013-11-15 23:59:00
+The Random Number Grand Challenge,/c/random-number-grand-challenge,standard,1000.0,205,22 months ago,2014-03-31 23:59:00,2014-04-01 23:59:00
+Data Mining Hackathon on BIG DATA (7GB) Best Buy mobile web site,/c/acm-sf-chapter-hackathon-big,standard,1000.0,25,3 years ago,2012-08-18 16:09:00,2012-09-30 01:00:00
+Follow the Money: Investigative Reporting Prospect,/c/cir-prospect,standard,1000.0,0,3 years ago,,
+Psychopathy Prediction Based on Twitter Usage,/c/twitter-psychopathy-prediction,standard,1000.0,111,3 years ago,2012-05-14 15:44:00,2012-06-29 23:59:00
+ICDAR 2011 - Arabic Writer Identification,/c/WIC2011,standard,1000.0,30,4 years ago,2011-02-28 00:00:00,2011-04-10 12:00:00
+Forecast Eurovision Voting ,/c/Eurovision2010,standard,1000.0,22,5 years ago,2010-04-07 07:57:00,2010-05-25 18:00:00
+ICFHR 2012 - Arabic Writer Identification,/c/awic2012,standard,1000.0,42,3 years ago,2012-02-21 23:07:00,2012-04-15 23:59:00
+BCI Challenge @ NER 2015,/c/inria-bci-challenge,standard,1000.0,260,11 months ago,2014-11-19 23:38:00,2015-02-24 23:59:00
+Stay Alert! The Ford Challenge,/c/stayalert,standard,950.0,176,4 years ago,2011-01-19 00:00:00,2011-03-09 13:00:00
+IJCNN Social Network Challenge ,/c/socialNetwork,standard,950.0,117,5 years ago,2010-11-08 00:00:00,2011-01-11 22:00:00
+Leaping Leaderboard Leapfrogs,/c/leapfrogging-leaderboards,standard,900.0,0,3 years ago,,
+Greek Media Monitoring Multilabel Classification (WISE 2014),/c/wise-2014,standard,680.0,120,19 months ago,2014-06-02 15:43:00,2014-07-15 23:59:00
+Chess ratings - Elo versus the Rest of the World,/c/chess,standard,617.0,252,5 years ago,2010-08-03 00:00:00,2010-11-17 20:00:00
+Data Mining Hackathon on (20 mb) Best Buy mobile web site - ACM SF Bay Area Chapter,/c/acm-sf-chapter-hackathon-small,standard,600.0,96,3 years ago,2012-08-18 16:10:00,2012-09-30 01:00:00
+Personality Prediction Based on Twitter Stream,/c/twitter-personality-prediction,standard,500.0,89,3 years ago,2012-05-08 17:56:00,2012-06-29 23:59:00
+Tourism Forecasting Part One,/c/tourism1,standard,500.0,55,5 years ago,2010-08-09 04:19:00,2010-09-19 23:00:00
+Tourism Forecasting Part Two,/c/tourism2,standard,500.0,42,5 years ago,2010-09-20 08:38:00,2010-11-21 23:00:00
+Predict HIV Progression,/c/hivprogression,standard,500.0,107,5 years ago,2010-04-27 21:29:00,2010-08-02 12:32:00
+Don't Overfit!,/c/overfitting,standard,500.0,259,4 years ago,2011-02-28 00:00:00,2011-05-15 00:00:00
+Semi-Supervised Feature Learning,/c/SemiSupervisedFeatureLearning,standard,500.0,26,4 years ago,2011-09-24 04:01:00,2011-10-17 23:59:00
+Partly Sunny with a Chance of Hashtags,/c/crowdflower-weather-twitter,standard,500.0,259,2 years ago,2013-09-27 14:43:00,2013-12-01 23:59:00
+Challenges in Representation Learning: Facial Expression Recognition Challenge,/c/challenges-in-representation-learning-facial-expression-recognition-challenge,standard,500.0,56,2 years ago,2013-04-12 23:10:00,2013-05-24 23:59:00
+Challenges in Representation Learning: The Black Box Learning Challenge,/c/challenges-in-representation-learning-the-black-box-learning-challenge,standard,500.0,211,2 years ago,2013-04-12 23:11:00,2013-05-24 23:59:00
+Challenges in Representation Learning: Multi-modal Learning,/c/challenges-in-representation-learning-multi-modal-learning,standard,500.0,0,2 years ago,,
+RecSys2013: Yelp Business Rating Prediction,/c/yelp-recsys-2013,standard,500.0,158,2 years ago,2013-04-24 00:14:00,2013-08-31 23:59:00
+The ICML 2013 Bird Challenge,/c/the-icml-2013-bird-challenge,standard,500.0,76,2 years ago,2013-05-08 20:50:00,2013-06-17 23:59:00
+The ICML 2013 Whale Challenge - Right Whale Redux,/c/the-icml-2013-whale-challenge-right-whale-redux,standard,500.0,129,2 years ago,2013-05-10 20:15:00,2013-06-17 23:59:00
+How Much Did It Rain?,/c/how-much-did-it-rain,standard,500.0,321,9 months ago,2015-01-09 18:35:00,2015-05-15 23:59:00
+How Much Did It Rain? II,/c/how-much-did-it-rain-ii,standard,500.0,587,2 months ago,2015-09-17 21:53:00,2015-12-07 23:59:00
+ECML/PKDD 15: Taxi Trajectory Prediction (I),/c/pkdd-15-predict-taxi-service-trajectory-i,standard,250.0,381,7 months ago,2015-04-20 19:04:00,2015-07-01 23:59:00
+ECML/PKDD 15: Taxi Trip Time Prediction (II),/c/pkdd-15-taxi-trip-time-prediction-ii,standard,250.0,345,7 months ago,2015-04-24 18:03:00,2015-07-01 23:59:00
+R Package Recommendation Engine,/c/R,standard,150.0,57,5 years ago,2010-10-10 04:00:00,2011-02-08 09:00:00
+World Cup 2010 - Take on the Quants,/c/worldcup2010,standard,100.0,0,5 years ago,,
+World Cup 2010 - Confidence Challenge,/c/worldcupconf,standard,100.0,63,5 years ago,2010-06-03 08:08:00,2010-06-11 13:28:00
+Yelp Recruiting Competition,/c/yelp-recruiting,Jobs,,350,2 years ago,,
+Walmart Recruiting II: Sales in Stormy Weather,/c/walmart-recruiting-sales-in-stormy-weather,Jobs,,485,8 months ago,,
+Facebook Recruiting IV: Human or Robot?,/c/facebook-recruiting-iv-human-or-bot,Jobs,,985,8 months ago,,
+Airbnb New User Bookings,/c/airbnb-recruiting-new-user-bookings,Jobs,,1463,5 days ago,,
+Walmart Recruiting: Trip Type Classification,/c/walmart-recruiting-trip-type-classification,Jobs,,1047,51 days ago,,
+US Dept of Education: College Scorecard,/c/us-dept-of-education-college-scorecard,Swag,,0,33 days ago,,
+What's Cooking?,/c/whats-cooking,Knowledge,,1388,58 days ago,,
+Meta Kaggle,/c/meta-kaggle,Swag,,0,2 months ago,,
+Reddit Comments,/c/reddit-comments-may-2015,Swag,,0,2 months ago,,
+Ocean Ship Logbooks (1750-1850),/c/climate-data-from-ocean-ships,Swag,,0,2 months ago,,
+Poker Rule Induction,/c/poker-rule-induction,Knowledge,,209,8 months ago,,
+Finding Elo,/c/finding-elo,Knowledge,,158,11 months ago,,
+MLSP 2014 Schizophrenia Classification Challenge,/c/mlsp-2014-mri,Kudos,,313,19 months ago,,
+Denoising Dirty Documents,/c/denoising-dirty-documents,Knowledge,,161,4 months ago,,
+Introducing Kaggle Scripts,/c/introducing-kaggle-scripts,Swag,,0,4 months ago,,
+USA Census,/c/2013-american-community-survey,Swag,,0,3 months ago,,
+Just the Basics - Strata 2013,/c/just-the-basics-strata-2013,Knowledge,,49,2 years ago,,
+Dogs vs. Cats,/c/dogs-vs-cats,Swag,,215,2 years ago,,
+Just the Basics - Strata 2013 After-party,/c/just-the-basics-the-after-party,Knowledge,,48,2 years ago,,
+Data Science London + Scikit-learn,/c/data-science-london-scikit-learn,Knowledge,,191,13 months ago,,
+Learning Social Circles in Networks,/c/learning-social-circles,Knowledge,,203,15 months ago,,
+Facebook Recruiting III - Keyword Extraction,/c/facebook-recruiting-iii-keyword-extraction,Jobs,,367,2 years ago,,
+Multi-label Bird Species Classification - NIPS 2013,/c/multilabel-bird-species-classification-nips2013,Knowledge,,32,2 years ago,,
+CIFAR-10 - Object Recognition in Images,/c/cifar-10,Knowledge,,231,16 months ago,,
+Large Scale Hierarchical Text Classification,/c/lshtc,Swag,,119,22 months ago,,
+Conway's Reverse Game of Life,/c/conway-s-reverse-game-of-life,Swag,,142,23 months ago,,
+Billion Word Imputation,/c/billion-word-imputation,Knowledge,,87,9 months ago,,
+Sentiment Analysis on Movie Reviews,/c/sentiment-analysis-on-movie-reviews,Knowledge,,861,11 months ago,,
+Walmart Recruiting - Store Sales Forecasting,/c/walmart-recruiting-store-sales-forecasting,Jobs,,691,21 months ago,,
+Bag of Words Meets Bags of Popcorn,/c/word2vec-nlp-tutorial,Knowledge,,578,7 months ago,,
+Forest Cover Type Prediction,/c/forest-cover-type-prediction,Knowledge,,1694,9 months ago,,
+Bike Sharing Demand,/c/bike-sharing-demand,Knowledge,,3252,8 months ago,,
+Random Acts of Pizza,/c/random-acts-of-pizza,Knowledge,,464,8 months ago,,
+INFORMS Data Mining Contest 2010,/c/informs2010,standard,0.0,145,5 years ago,2010-06-21 21:53:00,2010-10-10 02:28:00
+Million Song Dataset Challenge,/c/msdchallenge,Kudos,,150,3 years ago,,
+Eye Movements Verification and Identification Competition,/c/emvic,Kudos,,46,3 years ago,,
+Facebook Recruiting Competition,/c/FacebookRecruiting,Jobs,,418,3 years ago,,
+Facebook II - Mapping the Internet,/c/facebook-ii,Jobs,,111,3 years ago,,
+Prescription Volume Prediction,/c/RxVolumePrediction,Private,,12,3 years ago,,
+Will I Stay or Will I Go?,/c/customer-retention,Private,,12,3 years ago,,
+As the World Churns,/c/deloitte-churn-prediction,Private,,37,2 years ago,,
+Risky Business,/c/risky-business,Private,,44,20 months ago,,
+The Analytics Edge (15.071x),/c/the-analytics-edge-mit-15-071x,Private,,1685,21 months ago,,
+Flu Forecasting,/c/genentech-flu-forecasting,Private,,50,23 months ago,,
+MasterCard - Data Cleansing Competition,/c/mastercard-data-cleansing-competition-finals,Private,,6,2 years ago,,
+15.071x - The Analytics Edge (Spring 2015),/c/15-071x-the-analytics-edge-competition-spring-2015,Private,,2923,9 months ago,,
+15.071x - The Analytics Edge (Spring 2015),/c/15-071x-the-analytics-edge-spring-20152,Private,,0,10 months ago,,
+Western Australia Rental Prices ,/c/deloitte-western-australia-rental-prices,Private,,59,2 months ago,,
+Cervical Cancer Screening,/c/cervical-cancer-screening,Private,,40,15 days ago,,

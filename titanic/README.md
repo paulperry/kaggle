@@ -5,7 +5,7 @@ What works in this competition is domain knowledge: identify the women
 and children as they are saved first, and know the organization of the
 cabins on the boat (which deck they are on).  I achieve a score of
 0.78469 for a ranking of 859 / 2,560 at the time; below the 25% mark,
-but above the 35% mark.  I use [Datarobot](www.datarobot.com) as tool
+but above the 35% mark.  I use [Datarobot](http://www.datarobot.com) as tool
 to make the prediction, but handle all the pre and post processing in
 this
 [notebook](https://github.com/paulperry/kaggle/blob/master/titanic/Titanic-Derived.ipynb)
