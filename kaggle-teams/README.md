@@ -30,7 +30,7 @@ As of February 17, 2016 there were 200 completed competitions. In this
 study I focus this analysis on the 133 competitions with a cash prize
 that had teams.
 
-The questions I investigate are:
+The questions I investigate are in the [kaggle_teams](https://github.com/paulperry/kaggle/tree/master/kaggle-teams/kaggle_teams.ipynb) notebook are:
 
 1. How many kagglers joined teams?
 - What is the distribution of team sizes?
