@@ -15,17 +15,17 @@ the team organize their work?
 Data for this analysis comes from the Kaggle Leaderboard as of
 February 17, 2016. The data was extracted by web-scraping Kaggle’s
 leaderboard web pages. Source code for web-scraping and data
-pre-processing can be found at [Jim
-Thompson's](https://github.com/jimthompson5802) [github
-repository](https://github.com/jimthompson5802/kaggle-RScript). This
-analysis builds on previous analysis of Kaggle teams [by
-country](https://www.kaggle.com/jimthompson/introducing-kaggle-scripts/kaggle-competition-medal-count-analysis),
-[by team
-structure](https://www.kaggle.com/jimthompson/introducing-kaggle-scripts/visualizing-kaggle-team-structures),
-[by
-profile](http://notesofdabbler.github.io/201412_exploreKaggle/exploreKaggleUsers.html),
-and [over
-time](https://www.kaggle.com/jeffhebert/d/kaggle/meta-kaggle/kaggle-competitions-over-time).
+pre-processing can be found at
+[Jim Thompson's](https://github.com/jimthompson5802)
+[github repository](https://github.com/jimthompson5802/kaggle-RScript). This
+analysis builds on previous analysis of Kaggle teams
+[by country](https://www.kaggle.com/jimthompson/introducing-kaggle-scripts/kaggle-competition-medal-count-analysis),
+[by team structure](https://www.kaggle.com/jimthompson/introducing-kaggle-scripts/visualizing-kaggle-team-structures),
+[by profile](http://notesofdabbler.github.io/201412_exploreKaggle/exploreKaggleUsers.html),
+and
+[over time](https://www.kaggle.com/jeffhebert/d/kaggle/meta-kaggle/kaggle-competitions-over-time).
+This analysis does not take advantage of the
+[Meta-Kaggle](https://www.kaggle.com/kaggle/meta-kaggle) dataset yet.
 As of February 17, 2016 there were 200 completed competitions. In this
 study I focus this analysis on the 133 competitions with a cash prize
 that had teams.
