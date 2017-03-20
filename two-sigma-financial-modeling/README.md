@@ -18,9 +18,11 @@ href='https://github.com/Giqles/kagglegym'>kagglegym</a> also helped
 produce an environment with no leaks or lookahead bias.
 
 Here I :
-- Perform a basic Exploratory Data Analysis (EDA)
-- Inspect some basic Benchmarks
+- [Perform a basic Exploratory Data Analysis (EDA)](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/2Sigma_EDA.ipynb)
+- [Inspect some basic Benchmarks](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/2Sigma_Benchmarks.ipynb)
 - Develop an XGB Model
-- review some top models in the competition.
+- [review some top models in the competition](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/other_models.ipynb)
+
+
 
 
