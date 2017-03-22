@@ -46,3 +46,5 @@ The questions I investigate are in the [kaggle_teams](https://github.com/paulper
 - Do teams form based on language or country?
 - Does participating on a team correlate with Kaggle rank?
 - Do members team differently on structured vs unstructured data competitions?
+
+<img src='kaggle_teams.png'>
