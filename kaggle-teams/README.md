@@ -47,5 +47,6 @@ The questions I investigate are in the [kaggle_teams](https://github.com/paulper
 - Does participating on a team correlate with Kaggle rank?
 - Do members team differently on structured vs unstructured data competitions?
 
--> The Kaggle social graph of top players <-
+<p align="center"><b>The Kaggle social graph of top players</b><br>
 <img src='kaggle_teams.png'>
+</p>
