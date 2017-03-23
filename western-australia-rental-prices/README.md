@@ -9,7 +9,7 @@ included files you can get an idea of how tackled this problem.
 The data was best handled in SQL.  Extractions were then made to
 prepare a training set, and the final model was an <a
 href='australia-rental-prices-predict.ipynb'>ensemble blend</a> of R,
-Python, XBG, and <a href='http://www.datarobot.com'>DataRobot</a>
+Python, XGB, and <a href='http://www.datarobot.com'>DataRobot</a>
 generated models.
 
 In the EDA phase I spent some time mapping out the rental locations

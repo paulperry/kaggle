@@ -27,7 +27,7 @@ stakeholders in cervical cancer prevention who run awareness programs.
 
 Below is one analysis for the
 [Kaggle Genentech Cervical Cancer Screening](https://www.kaggle.com/c/cervical-cancer-screening/)
-competition, a description of the [model](Model.ml), and supporting files can be found in a
+competition, a description of the [model](Model.md), and supporting files can be found in a
 [github repo](https://github.com/paulperry/kaggle-cervical-cancer-screening).
 
 - By Paul Perry, Elena Cuoco, and Zygmunt Zając.
