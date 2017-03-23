@@ -1,0 +1,155 @@
+---
+output: pdf_document
+---
+
+Comparing predictions 
+--------------------------------------------------------
+* Paul: __submit36.csv__ / LB: 0.21034 
+* Gino: __avg_Nov2_15.csv__ / LB: 0.21465
+
+Comparing predictions' distribution  
+--------------------------------------------------------
+
+```{r, echo=FALSE}
+suppressMessages(library(data.table))
+suppressMessages(library(xgboost))
+suppressMessages(library(fastfurious))
+suppressMessages(library(Hmisc))
+
+### FUNCS 
+RMSLE = function(pred, obs) {
+  if (sum(pred<0)>0) {
+    pred = ifelse(pred >=0 , pred , 1.5)
+  }
+  rmsle = sqrt(    sum( (log(pred+1) - log(obs+1))^2 )   / length(pred))
+  return (rmsle)
+}
+
+### FAST-FURIOUS 
+ff.setBasePath(path = '/Users/gino/kaggle/fast-furious/gitHub/fast-furious/')
+ff.bindPath(type = 'data' , sub_path = 'dataset/deloitte-western-australia-rental-prices/data')
+ff.bindPath(type = 'code' , sub_path = 'competitions/deloitte-western-australia-rental-prices')
+ff.bindPath(type = 'elab' , sub_path = 'dataset/deloitte-western-australia-rental-prices/elab' ,  createDir = T) 
+
+ff.bindPath(type = 'ensemble_1' , sub_path = 'dataset/deloitte-western-australia-rental-prices/ensembles/ensemble_1',createDir = T) ## out 
+ff.bindPath(type = 'best_tune_1' , sub_path = 'dataset/deloitte-western-australia-rental-prices/ensembles/best_tune_1',createDir = T) ## out 
+ff.bindPath(type = 'submission_1' , sub_path = 'dataset/deloitte-western-australia-rental-prices/ensembles/pred_ensemble_1',createDir = T) ## out 
+
+ff.bindPath(type = 'ensemble_2' , sub_path = 'dataset/deloitte-western-australia-rental-prices/ensembles/ensemble_2',createDir = T) ## out 
+ff.bindPath(type = 'best_tune_2' , sub_path = 'dataset/deloitte-western-australia-rental-prices/ensembles/best_tune_2',createDir = T) ## out 
+ff.bindPath(type = 'submission_2' , sub_path = 'dataset/deloitte-western-australia-rental-prices/ensembles/pred_ensemble_2',createDir = T) ## out 
+
+
+############################################# 
+
+id_1 = "submit36.csv"
+id_2 = "avg_Nov2_15.csv"
+
+pred_Paul = as.data.frame( fread(paste(ff.getPath("elab") , id_1 , sep='') , stringsAsFactors = F))
+pred_Gino = as.data.frame( fread(paste(ff.getPath("elab") , id_2 , sep='') , stringsAsFactors = F))
+#pred_2 = as.data.frame( fread(paste(ff.getPath("submission_1") , id_2 , sep='') , stringsAsFactors = F))
+
+###
+describe(pred_Paul$REN_BASE_RENT)
+describe(pred_Gino$REN_BASE_RENT)
+
+```
+
+* similar mean (464.5 vs 468.3)
+* different standard deviation (193.3795 vs.239.4788). Gino's prediction has more outliers >3089.38 (= highest value of Paul's prediction). 
+
+Comparing predictions - Gino's pred < 3100
+--------------------------------------------------------
+
+```{r,echo=FALSE,fig.show="hide"}
+###
+p1 <- hist(pred_Paul$REN_BASE_RENT[pred_Gino$REN_BASE_RENT<3100])
+p2 <- hist(pred_Gino$REN_BASE_RENT[pred_Gino$REN_BASE_RENT<3100])
+```
+
+```{r,echo=FALSE}
+###
+
+plot( p1, col=rgb(0,0,1,1/4) ,xlim = c(0,3100) , main="Gino's pred < 3100" , xlab = "Rent")
+plot( p2, col=rgb(1,0,0,1/4), xlim = c(0,3100) , add=T)
+legend("topright", c("Paul","Gino"), lwd=4 , col = c(rgb(0,0,1,1/4),rgb(1,0,0,1/4)) )                   
+
+```
+
+```{r,echo=FALSE,fig.show="hide"}
+###
+p1 <- hist(pred_Paul$REN_BASE_RENT[pred_Gino$REN_BASE_RENT>=3100])
+p2 <- hist(pred_Gino$REN_BASE_RENT[pred_Gino$REN_BASE_RENT>=3100])
+```
+
+Comparing predictions - Gino's pred >= 3100
+--------------------------------------------------------
+```{r,echo=FALSE}
+###
+plot( p1, col=rgb(0,0,1,1/4) , main="Paul Pred (Gino's pred >= 3100)" , xlab = "Rent")
+
+```
+
+```{r,echo=FALSE}
+###
+
+plot( p2, col=rgb(1,0,0,1/4) ,  main="Gino Pred (Gino's pred >= 3100)" , xlab = "Rent")
+
+```
+
+
+Simple Model averaging 
+--------------------------------------------------------
+* weight Paul: 0.6 
+* weigth Gino: 0.4 
+* ~0.28 LB 
+
+Concordance Model averaging  
+--------------------------------------------------------
+* Assumed Paul prediction as better, averaged models (same weigths above) only if the max delta percentage deviance between predictions < 0.29 (covering ~50% of th test set). 
+* LB ~ 0.214 
+
+```{r,echo=TRUE}
+###
+delta_distribution_perc = data.frame(max_delta = 
+                                       seq(from = 0,to = 1,length.out = 400) , err_perc = NA)
+
+for (i in seq_along(delta_distribution_perc$max_delta) ) { 
+  MAX_DELTA = delta_distribution_perc$max_delta[i]
+  delta = abs((pred_Paul$REN_BASE_RENT-pred_Gino$REN_BASE_RENT)/pred_Paul$REN_BASE_RENT)
+  
+  delta_idx = which(delta<=MAX_DELTA)
+  
+  pred_1_overlap = pred_Paul$REN_BASE_RENT[delta_idx]
+  pred_2_overlap = pred_Gino$REN_BASE_RENT[delta_idx]
+  
+  pred_test = pred_Paul$REN_BASE_RENT
+  pred_test[delta_idx] = pred_Gino$REN_BASE_RENT[delta_idx]
+  
+  rmsle_overlap = RMSLE(pred=pred_test, obs=pred_Paul$REN_BASE_RENT)
+  
+  delta_distribution_perc[delta_distribution_perc$max_delta==MAX_DELTA,]$err_perc = rmsle_overlap
+}
+
+plot(x = delta_distribution_perc$max_delta,y = delta_distribution_perc$err_perc , type = "l" , 
+     xlab="max delta percentage deviance" , ylab="RMSLE | Paul prediction is correct" , 
+     main = "RMSLE between predictions vs. perc. deviance")
+```
+
+
+Some findinds   
+--------------------------------------------------------
+* Averaging predictions with simple linear coefficients doesn't work 
+* A % of Gino's outliers should be correct, otherwise LB~0.214 isn't explicable 
+* If it was possible to identify a significant part of Gino's good outliers and then merging them with Paul base prediction our score should boost
+
+Mapping Gino's outliers vs. Paul base in the feature space    
+--------------------------------------------------------
+TODO 
+
+
+
+
+
+
+
