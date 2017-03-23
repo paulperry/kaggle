@@ -15,13 +15,20 @@ It was an interesting competition, primarily because if I were to
 tackle ML on market data, I would would want to structure the data
 exactly as they provided in the training set.  The addition of <a
 href='https://github.com/Giqles/kagglegym'>kagglegym</a> also helped
-produce an environment with no leaks or lookahead bias.
+produce an environment less susceptible to leaks or lookahead bias.
+The downside is we don't know the meaning of the anonymized
+transformed data, making it harder to bring domain knowledge to the
+problem; and in turn complicating the decision of which features to
+build.
 
 Here I :
 - [Perform a basic Exploratory Data Analysis (EDA)](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/2Sigma_EDA.ipynb)
 - [Inspect some basic Benchmarks](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/2Sigma_Benchmarks.ipynb)
+- Perform some feature egineering
 - Develop an XGB Model
-- [review some top models in the competition](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/other_models.ipynb)
+- [and compare some top models in the competition](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/other_models.ipynb)
+
+I joined this competition very late and submitted only two models.
 
 
 

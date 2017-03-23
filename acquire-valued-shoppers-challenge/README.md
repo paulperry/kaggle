@@ -27,6 +27,6 @@ Sites:
 - <a href='http://machinelearningmastery.com/market-basket-analysis-with-association-rule-learning/'>Market Basket Analysis with Association Rule Learning</a> by Jason Brownlee on March 17, 2014.
 - <a href='http://snowplowanalytics.com/guides/recipes/catalog-analytics/market-basket-analysis-identifying-products-that-sell-well-together.html'>Market basket analysis: identifying products and content that go well together</a>
 - <a href='https://en.wikipedia.org/wiki/Quantile_regression'>Quantile Regression</a>
-- - <a href='https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwj70JeRmevSAhWK7IMKHeL5BLoQFggnMAE&url=https%3A%2F%2Fwww.researchgate.net%2Ffile.PostFileLoader.html%3Fid%3D57563157eeae39aa52279f64%26assetKey%3DAS%253A370168766189570%25401465266519195&usg=AFQjCNFHr3hcxh753druh3n1y6ETWAl0hg&sig2=TKbdWt-1ysj9gmKH1ZEWUQ'>Tobit Models</a>
+- <a href='https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&ved=0ahUKEwj70JeRmevSAhWK7IMKHeL5BLoQFggnMAE&url=https%3A%2F%2Fwww.researchgate.net%2Ffile.PostFileLoader.html%3Fid%3D57563157eeae39aa52279f64%26assetKey%3DAS%253A370168766189570%25401465266519195&usg=AFQjCNFHr3hcxh753druh3n1y6ETWAl0hg&sig2=TKbdWt-1ysj9gmKH1ZEWUQ'>Tobit Models</a>
 
 
