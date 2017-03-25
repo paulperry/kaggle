@@ -87,27 +87,27 @@ its a bit of trial and error. But try picking people that are around
 you rank level and build up from there. Its easier to understand each
 other."
 
-1. How do you communicate? - chat
-- How do you share code? - usually we dont, but when we do, its on dropbox
-- How do you share data (or features)? - csv on dropbox
-- Do you share code frameworks? - people dont like to mess much with someone else's code
-- How do you decide to divide the work? - chat, but we usually have
+1. *How do you communicate?* - chat
+- *How do you share code?* - usually we dont, but when we do, its on dropbox
+- *How do you share data (or features)?* - csv on dropbox
+- *Do you share code frameworks?* - people dont like to mess much with someone else's code
+- *How do you decide to divide the work?* - chat, but we usually have
   some slightly different approaches. its rare but we can suggest each
   other based on availability which ideas we can pursue
   first. Ususally telling what i will do will prevent others from doing the
   same
-- How do you avoid duplicative work? - we dont avoid, but its not a
+- *How do you avoid duplicative work?* - we dont avoid, but its not a
 big issue. I don't team up from the start so we can have distinct
 approachs when merging teams
-- How do you avoid team members finding the same stuff? - we dont
-- How do you keep track of model performance? - each one is
+- *How do you avoid team members finding the same stuff?* - we dont
+- *How do you keep track of model performance?* - each one is
 responsible for keeping its versioning. I use git, some just duplicate
 and enumerate files. on each subission we describe which models we
 used to generate it
-- How do you decide who gets to submit what on each day? - commom
+- *How do you decide who gets to submit what on each day?* - commom
 sense. we divide equally the number of submissions, but if someones
 need more he asks
-- Who picks and and how do you pick the final submissions? - the
+- *Who picks and and how do you pick the final submissions?* - the
 leader picks it. Its a consensus. I never had any trouble to do
 it. With the right reasons its very easy to choose. Of course some
 times I dont agree and we just go with the majority. Just dont be very
