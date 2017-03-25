@@ -33,19 +33,19 @@ that had teams.
 The questions I investigate are in the [kaggle_teams](https://github.com/paulperry/kaggle/tree/master/kaggle-teams/kaggle_teams.ipynb) notebook are:
 
 1. How many kagglers joined teams?
-- What is the distribution of team sizes?
-- How many distict team names were there?
-- Which competitions had the most teams?
-- Which team name won the most competitions
-- Which team members won the most when on a team?
-- Which are the largest teams?
-- Who has teamed up the most?
-- What does the social graph look like?
-- What are the skills of the top players?
-- Do teams cluster based on skills?
-- Do teams form based on language or country?
-- Does participating on a team correlate with Kaggle rank?
-- Do members team differently on structured vs unstructured data competitions?
+1. What is the distribution of team sizes?
+1. How many distict team names were there?
+1. Which competitions had the most teams?
+1. Which team name won the most competitions
+1. Which team members won the most when on a team?
+1. Which are the largest teams?
+1. Who has teamed up the most?
+1. What does the social graph look like?
+1. What are the skills of the top players?
+1. Do teams cluster based on skills?
+1. Do teams form based on language or country?
+1. Does participating on a team correlate with Kaggle rank?
+1. Do members team differently on structured vs unstructured data competitions?
 
 <p align="center"><b>The Kaggle social graph of top players</b><br>
 <img src='kaggle_teams.png'>
@@ -57,17 +57,17 @@ interview the top team players to learn some best practices. I
 followed up with some specific questions:
 
 1 .How do you select who you want to team with?
-- How do you communicate? Email, chat, video chat?
-- How do you share code?
-- How do you share data (or features)?
-- Do you share code frameworks?
-- How do you decide to divide the work?
-- How do you avoid duplicative work? Or repeated work?
-- How do you avoid team members finding the same stuff?
-- How do you keep track of model performance?
-- How do you decide who gets to submit what on each day?
-- Who picks and and how do you pick the final submissions?
-- If you wanted to learn what worked on other Kaggle teams, which
+1. How do you communicate? Email, chat, video chat?
+1. How do you share code?
+1. How do you share data (or features)?
+1. Do you share code frameworks?
+1. How do you decide to divide the work?
+1. How do you avoid duplicative work? Or repeated work?
+1. How do you avoid team members finding the same stuff?
+1. How do you keep track of model performance?
+1. How do you decide who gets to submit what on each day?
+1. Who picks and and how do you pick the final submissions?
+1. If you wanted to learn what worked on other Kaggle teams, which
   teams would you want to learn from, and what questions would you
   ask?
 
@@ -87,32 +87,32 @@ its a bit of trial and error. But try picking people that are around
 you rank level and build up from there. Its easier to understand each
 other."
 
-1. *How do you communicate?* - chat
-- *How do you share code?* - usually we dont, but when we do, its on dropbox
-- *How do you share data (or features)?* - csv on dropbox
-- *Do you share code frameworks?* - people dont like to mess much with someone else's code
-- *How do you decide to divide the work?* - chat, but we usually have
+1. *How do you communicate?* __chat__
+1. *How do you share code?* __usually we dont, but when we do, its on dropbox__
+1. *How do you share data (or features)?* __csv on dropbox__
+1. *Do you share code frameworks?* __people dont like to mess much with someone else's code__
+1. *How do you decide to divide the work?* __chat, but we usually have
   some slightly different approaches. its rare but we can suggest each
   other based on availability which ideas we can pursue
   first. Ususally telling what i will do will prevent others from doing the
-  same
-- *How do you avoid duplicative work?* - we dont avoid, but its not a
+  same__
+1. *How do you avoid duplicative work?* __we dont avoid, but its not a
 big issue. I don't team up from the start so we can have distinct
-approachs when merging teams
-- *How do you avoid team members finding the same stuff?* - we dont
-- *How do you keep track of model performance?* - each one is
+approachs when merging teams__
+1. *How do you avoid team members finding the same stuff?* __we dont__
+1. *How do you keep track of model performance?* __each one is
 responsible for keeping its versioning. I use git, some just duplicate
 and enumerate files. on each subission we describe which models we
-used to generate it
-- *How do you decide who gets to submit what on each day?* - commom
+used to generate it__
+1. *How do you decide who gets to submit what on each day?* __commom
 sense. we divide equally the number of submissions, but if someones
-need more he asks
-- *Who picks and and how do you pick the final submissions?* - the
+need more he asks__
+1. *Who picks and and how do you pick the final submissions?* __the
 leader picks it. Its a consensus. I never had any trouble to do
 it. With the right reasons its very easy to choose. Of course some
 times I dont agree and we just go with the majority. Just dont be very
 picky and it will go smoothly.  It's very rare for me to not pick my
-best submission. Except on some competitions that are too random.
+best submission. Except on some competitions that are too random.__
 
 
 References:
