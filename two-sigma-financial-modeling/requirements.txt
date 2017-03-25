@@ -1,0 +1,15 @@
+# requirements.txt
+--index-url https://pypi.python.org/simple/
+
+numpy=1.12.0
+pandas=0.19.2
+seaborn=0.7.1
+matplotlib=1.5.3
+re=2.2.1
+sklearn=0.18.1
+threading
+multiprocessing
+threading
+xgboost=0.6
+tensorflow=1.0.1
+lightgbm=0.1
