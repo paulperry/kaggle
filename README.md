@@ -26,4 +26,4 @@ The more documented competitions are:
 - <a href='https://github.com/paulperry/kaggle/tree/master/two-sigma-financial-modeling'> two-sigma-financial-modeling</a>
 - <a href='https://github.com/paulperry/kaggle/tree/master/western-australia-rental-prices'> western-australia-rental-prices</a>
 
-Paul.
+
