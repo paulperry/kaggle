@@ -22,11 +22,11 @@ some top players on their processes as a team.
 
 The more documented competitions are:
 
-- <a href='href='https://github.com/paulperry/kaggle/tree/master/cervical-cancer-screening'>
+- <a href='https://github.com/paulperry/kaggle/tree/master/cervical-cancer-screening'>
 cervical-cancer-screening</a>
-- <a href='href='https://github.com/paulperry/kaggle/tree/master/two-sigma-financial-modeling'>
+- <a href='https://github.com/paulperry/kaggle/tree/master/two-sigma-financial-modeling'>
 two-sigma-financial-modeling</a>
-- <a href='href='https://github.com/paulperry/kaggle/tree/master/western-australia-rental-prices'>
+- <a href='https://github.com/paulperry/kaggle/tree/master/western-australia-rental-prices'>
 western-australia-rental-prices</a>
 
 Paul.
