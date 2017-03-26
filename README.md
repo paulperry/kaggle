@@ -14,4 +14,19 @@ The place to start is the README in each of the directories, which
 should provide some background on how the competition went and point
 to the right ipynb file.
 
+Of particular note is the <a
+href='https://github.com/paulperry/kaggle/tree/master/kaggle-teams'>
+kaggle-teams</a> directory, which is not a competition but a social
+network analysis of the kaggle community and subsequent interview with
+some top players on their processes as a team.
+
+The more documented competitions are:
+
+- <a href='href='https://github.com/paulperry/kaggle/tree/master/cervical-cancer-screening'>
+cervical-cancer-screening</a>
+- <a href='href='https://github.com/paulperry/kaggle/tree/master/two-sigma-financial-modeling'>
+two-sigma-financial-modeling</a>
+- <a href='href='https://github.com/paulperry/kaggle/tree/master/western-australia-rental-prices'>
+western-australia-rental-prices</a>
+
 Paul.
