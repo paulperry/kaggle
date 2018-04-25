@@ -22,11 +22,11 @@ problem; and in turn complicating the decision of which features to
 build.
 
 Here I :
-- [Perform a basic Exploratory Data Analysis (EDA)](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/2Sigma_EDA.ipynb)
-- [Inspect some basic Benchmarks](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/2Sigma_Benchmarks.ipynb)
-- Perform some feature egineering
+- [Perform a basic Exploratory Data Analysis (EDA)](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/working/2Sigma_EDA.ipynb)
+- [Build basic Benchmarks](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/working/2Sigma_Benchmarks.ipynb)
+- Perform feature egineering
 - Develop an XGB Model
-- [and compare some top models in the competition](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/models/other_models.ipynb)
+- [and compare some top models in the competition](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/working/other_models.ipynb)
 
 I joined this competition very late and submitted only two models.
 

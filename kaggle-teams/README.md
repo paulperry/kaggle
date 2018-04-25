@@ -114,6 +114,11 @@ times I dont agree and we just go with the majority. Just dont be very
 picky and it will go smoothly.  It's very rare for me to not pick my
 best submission. Except on some competitions that are too random.__
 
+My conclusion was that at the time (2016, and before
+[Kaggle Kernels](https://www.kaggle.com/kernels)), teams would at best
+ensemble their models. Little time was devoted to joint data
+exploration, feature reuse, and understanding other people's
+models.  
 
 References:
 
