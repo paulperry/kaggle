@@ -28,7 +28,7 @@ Here I :
 - Develop an XGB Model
 - [and compare some top models in the competition](https://github.com/paulperry/kaggle/blob/master/two-sigma-financial-modeling/working/other_models.ipynb)
 
-![Model Performance]("./kaggle_2sigma_fin_pradeep.png")
+![Model Performance](kaggle_2sigma_fin_pradeep.png)
 
 I joined this competition very late and submitted only two models.
 
